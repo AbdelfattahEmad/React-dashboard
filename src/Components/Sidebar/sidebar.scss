@@ -1,0 +1,46 @@
+.Sidebar_Container{
+    width: 250px;
+    height: 100Vh;
+    border: 1px solid #eee;
+    background-color: #405189;
+    
+    .Sidebar_Logo {
+        margin-bottom: 20px;
+
+        img{
+        padding: 22px 6px;
+        width: 135px;
+        margin-left: 30px;
+
+        }
+        
+    }
+
+    .Title {
+
+       margin:10px 10px 30px 10px  ;
+        color: #7886b5;
+
+    }
+
+    .Sidebar_link{
+        font-family: fangsong;
+        padding: 0px 20px;
+        li{
+            list-style: none;
+            font-size: 18px;
+            letter-spacing: 1.1px;
+
+            .Link{
+                margin:15px 15px 10px 2px;
+                color: #eee;
+                
+                :hover{
+                    color: #405189;
+                }
+            }
+        }
+       
+    }
+    
+}

@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Layout from './Layout/Layout'
+import {Routes, Route } from 'react-router-dom'
+import Category from './Components/Pages/Category/Category';
+import SubCategory from './Components/Pages/SubCategory/SubCategory';
+import Brands from './Components/Pages/Brands/Brands';
+import Products from './Components/Pages/Products/Products';
+import Coupons from './Components/Pages/Coupons/Coupons';
+import Orders from './Components/Pages/Orders/Orders';
+import Settings from './Components/Pages/Settings/Settings';
+import Users from './Components/Pages/Users/Users';
+import Auth from './Components/Pages/Auth/Auth';
+import Reviews from './Components/Pages/Reviews/Reviews';
+import Adresses from './Components/Pages/Adresses/Adresses';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    <Routes>
+
+      <Route path="/" element={<Layout />} >
+        <Route path='Categories' element={<Category/>} />
+        <Route path='SubCategories' element={<SubCategory/>} />
+        <Route path='Brands' element={<Brands/>} />
+        <Route path='Products' element={<Products/>} />
+        <Route path='Products' element={<Products/>} />
+        <Route path='Coupons' element={<Coupons/>} />
+        <Route path='Orders' element={<Orders/>} />
+        <Route path='Settings' element={<Settings/>} />
+        <Route path='Users' element={<Users/>} />
+        <Route path='Auth' element={<Auth/>} />
+        <Route path='Reviews' element={<Reviews/>} />
+        <Route path='UserAdress' element={<Adresses/>} />
+
+
+
+
+
+
+
+
+     
+
+
+       
+
+
+        
+
+
+
+      </Route>
+
+    </Routes>
+   
   )
 }
 
