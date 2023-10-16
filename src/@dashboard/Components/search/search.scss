@@ -1,0 +1,38 @@
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f9;
+  border-radius: 6px;
+  padding: 6px 0;
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border-color: unset;
+      outline: none;
+    }
+  }
+
+  &__input {
+    border: none;
+    padding-inline-start: 40px;
+    background-color: transparent;
+    font-size: 14px;
+    &:focus,
+    &:focus-visible {
+      box-shadow: none;
+      border: none;
+      border-color: unset;
+      outline: none;
+    }
+  }
+}
