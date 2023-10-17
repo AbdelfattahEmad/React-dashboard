@@ -4,9 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
 import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
-
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Search from "../search/search";
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { NavDropdown } from "react-bootstrap";
+
 
 const Topbar = () => {
   return (
@@ -25,19 +28,19 @@ const Topbar = () => {
       <div className="Personal_Data">
         <div className="Icons">
           <div className="img">
-            <NavDropdown
-              id="nav-dropdown-dark-example"
-              title="language"
-              menuVariant="dark"
-            >
-              <NavDropdown.Item href="#action/3.1">
-                <img src={egypt} alt="egypt" />
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                <img src={eng} alt="egypt" />
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-            </NavDropdown>
+
+          <Dropdown as={ButtonGroup}>
+                  
+            <Button className="BTn" variant="link" ><img src={egypt} alt="egypt" /></Button>
+
+            <Dropdown.Toggle variant="link"/>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1"><img src={eng} alt="egypt" />
+        </Dropdown.Item>
+              </Dropdown.Menu>
+          </Dropdown>
+
           </div>
 
           <FontAwesomeIcon
@@ -47,24 +50,37 @@ const Topbar = () => {
           />
         </div>
 
-        <div className="name">
-          <NavDropdown
-            id="nav-dropdown-dark-example"
-            title=""
-            menuVariant="dark"
-          >
-            <NavDropdown.Item href="#action/3.1">profile</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-            <NavDropdown.Divider />
-          </NavDropdown>
 
-          <img src={abdo} alt="aboda" />
 
-          <div className="data">
-            <h5>Abdelfatah</h5>
-            <p>Develober</p>
-          </div>
-        </div>
+
+
+
+
+
+
+        <Dropdown as={ButtonGroup}>
+                  
+                <Button className="Profil_Btn" variant="link" >
+                  <div className="name">
+                    <img src={abdo} alt="aboda" />
+                    <div className="data">
+                    <h5>Abdelfatah</h5>
+                    <p>Develober</p>
+                    </div>
+                    </div>
+
+                  </Button>
+      
+                  <Dropdown.Toggle  variant="link" className="Profil_Btns" />
+      
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                      <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
+
+                    </Dropdown.Menu>
+                </Dropdown>
+
+
       </div>
     </div>
   );

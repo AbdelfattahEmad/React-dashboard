@@ -14,6 +14,12 @@
 
     .img {
       margin-right: 15px;
+      .BTn{
+        padding: 10px 2px;
+        margin-right: -28px;
+
+
+      }
       .drop {
         border: none;
         padding: 0;
@@ -35,8 +41,7 @@
     .name {
       background-color: #f4f3f9;
       border-radius: 4px;
-      margin-right: 35px;
-      padding: 10px;
+      padding:0px 10px;
       display: flex;
       align-items: center;
       cursor: pointer;
