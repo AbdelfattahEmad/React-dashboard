@@ -19,6 +19,8 @@ import {
   faJediOrder,
   faProductHunt,
 } from "@fortawesome/free-brands-svg-icons";
+
+
 const Sidebar = () => {
   return (
     <div className="Sidebar_Container">
@@ -31,176 +33,98 @@ const Sidebar = () => {
       <p className="Title"> Menu</p>
 
       <ul className="menu-list">
+
         <li className="menu-list__item">
-          <Link className="menu-list__link">
+
+          <Link  to="Categories" className="menu-list__link">
             <FontAwesomeIcon icon={faGaugeHigh} className="menu-list__icon" />
             Categories
           </Link>
-        </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faGaugeHigh}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link
-            to="Categories"
-            style={{ textDecoration: "none", color: "#ffff" }}
-          >
-            Categories
-          </Link>
         </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faCircleHalfStroke}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link
-            to="SubCategories"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
+        <li className="menu-list__item">
+
+          <Link  to ="SubCategories" className="menu-list__link">
+            <FontAwesomeIcon icon={faCircleHalfStroke} className="menu-list__icon" />
             SubCategories
           </Link>
-        </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faBandcamp}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link to="Brands" className="Link" style={{ textDecoration: "none" }}>
-            Brands
-          </Link>
         </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faProductHunt}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link
-            to="Products"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
+
+        <li className="menu-list__item">
+
+        <Link to="Brands"  className="menu-list__link">
+          <FontAwesomeIcon icon={faBandcamp} className="menu-list__icon" />
+          Brands
+       
+        </Link>
+
+        </li>
+
+
+        <li className="menu-list__item">
+
+          <Link to="Products"  className="menu-list__link">
+            <FontAwesomeIcon icon={faProductHunt} className="menu-list__icon" />
             Products
           </Link>
-        </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faCube}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link
-            to="Coupons"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
+        </li>
+
+
+        <li className="menu-list__item">
+
+          <Link to="Coupons" className="menu-list__link">
+            <FontAwesomeIcon icon={faCube} className="menu-list__icon" />
             Coupons
           </Link>
+
         </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faJediOrder}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
 
-          <Link to="Orders" className="Link" style={{ textDecoration: "none" }}>
+
+          <li className="menu-list__item">
+
+          <Link to="Orders" className="menu-list__link">
+            <FontAwesomeIcon icon={faJediOrder} className="menu-list__icon" />
             Orders
           </Link>
-        </li>
-      </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faGear}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
+          </li>
 
-          <Link
-            to="Settings"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
+
+
+        <li className="menu-list__item">
+
+        <Link to="Settings" className="menu-list__link">
+          <FontAwesomeIcon icon={faGear} className="menu-list__icon" />
             Settings
-          </Link>
+        </Link>
+
+          </li>
+
+
+        <li className="menu-list__item">
+
+        <Link  to="Users" className="menu-list__link">
+          <FontAwesomeIcon icon={faUser} className="menu-list__icon" />
+          User Adresses
+        </Link>
+
         </li>
+        
+       <li className="menu-list__item">
+
+        <Link to="Reviews" className="menu-list__link">
+          <FontAwesomeIcon icon={faRegistered} className="menu-list__icon" />
+              Reviews
+        </Link>
+        </li>
+
       </ul>
 
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faUser}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link to="Users" className="Link" style={{ textDecoration: "none" }}>
-            Users
-          </Link>
-        </li>
-      </ul>
-
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faAutoprefixer}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-
-          <Link to="Auth" className="Link" style={{ textDecoration: "none" }}>
-            Authentaction
-          </Link>
-        </li>
-      </ul>
-
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faRegistered}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-
-          <Link
-            to="Reviews"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
-            Reviews
-          </Link>
-        </li>
-      </ul>
-
-      <ul className="Sidebar_link ">
-        <li style={{ color: "#ffffff" }}>
-          <FontAwesomeIcon
-            icon={faAddressBook}
-            style={{ color: "#ffffff", paddingRight: 15 }}
-          />
-          <Link
-            to="UserAdress"
-            className="Link"
-            style={{ textDecoration: "none" }}
-          >
-            User Adresses
-          </Link>
-        </li>
-      </ul>
     </div>
   );
 };
