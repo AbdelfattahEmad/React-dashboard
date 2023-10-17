@@ -3,12 +3,20 @@
 }
 
 .Profil_Btn {
-    text-decoration: none;
-    color: black;
-    padding: 0;
+  text-decoration: none;
+  color: black;
+  padding: 0;
 }
 
-.Profil_Btns{
+.Profil_Btns {
   margin-right: 25px;
 }
 
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  &::after {
+    display: none;
+  }
+}

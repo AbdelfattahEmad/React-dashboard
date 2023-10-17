@@ -5,11 +5,10 @@ import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
 import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
 import Search from "../search/search";
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Dropdown from "react-bootstrap/Dropdown";
 import { NavDropdown } from "react-bootstrap";
-
 
 const Topbar = () => {
   return (
@@ -28,19 +27,19 @@ const Topbar = () => {
       <div className="Personal_Data">
         <div className="Icons">
           <div className="img">
+            <Dropdown as={ButtonGroup}>
+              <Button className="BTn" variant="link">
+                <img src={egypt} alt="egypt" />
+              </Button>
 
-          <Dropdown as={ButtonGroup}>
-                  
-            <Button className="BTn" variant="link" ><img src={egypt} alt="egypt" /></Button>
-
-            <Dropdown.Toggle variant="link"/>
+              <Dropdown.Toggle variant="link" />
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"><img src={eng} alt="egypt" />
-        </Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
+                  <img src={eng} alt="egypt" />
+                </Dropdown.Item>
               </Dropdown.Menu>
-          </Dropdown>
-
+            </Dropdown>
           </div>
 
           <FontAwesomeIcon
@@ -50,37 +49,26 @@ const Topbar = () => {
           />
         </div>
 
-
-
-
-
-
-
-
-
         <Dropdown as={ButtonGroup}>
-                  
-                <Button className="Profil_Btn" variant="link" >
-                  <div className="name">
-                    <img src={abdo} alt="aboda" />
-                    <div className="data">
-                    <h5>Abdelfatah</h5>
-                    <p>Develober</p>
-                    </div>
-                    </div>
+          {/* <Button className="Profil_Btn" variant="link">
+            
+          </Button> */}
 
-                  </Button>
-      
-                  <Dropdown.Toggle  variant="link" className="Profil_Btns" />
-      
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                      <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
+          <Dropdown.Toggle className="Profil_Btns">
+            <div className="name">
+              <img src={abdo} alt="aboda" />
+              <div className="data">
+                <h5>Abdelfatah</h5>
+                <p>Develober</p>
+              </div>
+            </div>
+          </Dropdown.Toggle>
 
-                    </Dropdown.Menu>
-                </Dropdown>
-
-
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </div>
   );
