@@ -8,7 +8,6 @@ import Search from "../search/search";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
-import { NavDropdown } from "react-bootstrap";
 
 const Topbar = () => {
   return (
@@ -19,24 +18,45 @@ const Topbar = () => {
           size="xl"
           style={{ color: "#878a99", marginRight: 10 }}
         />
-
-        {/* <input placeholder="Search..." alt="search" /> */}
         <Search />
       </div>
 
       <div className="Personal_Data">
+
         <div className="Icons">
+
           <div className="img">
+
+          <Dropdown as={ButtonGroup}>
+
+          <Dropdown.Toggle className="Profil_Btns">
+
+          <img src={egypt} alt="egypt" />
+
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">
+            <img src={eng} alt="egypt" />
+            </Dropdown.Item>
+          </Dropdown.Menu>
+
+        </Dropdown>
+
+
+
+
+
+
             <Dropdown as={ButtonGroup}>
-              <Button className="BTn" variant="link">
-                <img src={egypt} alt="egypt" />
-              </Button>
+              
 
               <Dropdown.Toggle variant="link" />
+              
+
 
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">
-                  <img src={eng} alt="egypt" />
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -48,11 +68,7 @@ const Topbar = () => {
             style={{ color: "#525760", marginRight: 20, cursor: "pointer" }}
           />
         </div>
-
         <Dropdown as={ButtonGroup}>
-          {/* <Button className="Profil_Btn" variant="link">
-            
-          </Button> */}
 
           <Dropdown.Toggle className="Profil_Btns">
             <div className="name">
@@ -67,6 +83,12 @@ const Topbar = () => {
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
             <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Messages</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Help</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Logout</Dropdown.Item>
+
+
           </Dropdown.Menu>
         </Dropdown>
       </div>

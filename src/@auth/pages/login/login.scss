@@ -1,0 +1,55 @@
+.Login_Container{
+    border: 2px solid #eee;
+    background-color: #ffffff;
+    width: 60vh;
+    height: 70vh;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0 1px 2px rgba(56,65,74,.15);
+    margin-top: 15px;
+
+    .title{
+        padding: 8px;
+        margin-top: 1px;
+        h5{
+            color: #5d6c97;
+        }
+        p{
+            color: #bbbcc3;
+
+
+        }
+    }
+    .input_container{
+        padding: 10px;
+
+        .Form{
+            padding: 5px;
+            text-align: start;
+
+        }
+
+        .Button{
+            padding: 8px 100px;
+            background-color: #0ab39c;
+            color: #ffffff;
+            border-color: #0ab39c;
+            margin: 0;
+            
+            
+        }
+        .media{
+            p{
+                padding: 5px;
+            }
+            .images{
+                img{
+                    
+                }
+            }
+        }
+
+
+    }
+
+}

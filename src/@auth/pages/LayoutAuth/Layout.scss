@@ -1,0 +1,47 @@
+.Auth_Container{
+    position: relative;
+Header{
+    background-color: #4b5285;
+    height: 63vh;
+    border-bottom-left-radius: 35%;
+    border-bottom-Right-radius: 35%;
+    .Logo{
+        text-align: center;
+        padding-top: 40px;
+
+        img{
+            padding: 10px;
+
+        }
+        p{
+            color: #9ba4c1;
+            font-size: 18px;
+        }
+        
+
+    }
+
+
+
+    }
+
+    .content{
+        margin: auto;
+        position: absolute;
+        top:200px;
+        right: 0;
+        bottom: 50px;
+        left: 0;
+    }
+
+    footer{
+        text-align: center;
+        padding: 15px;
+        color: #cfd1da;
+        margin: 20px;
+
+        p{
+            
+        }
+    }
+}

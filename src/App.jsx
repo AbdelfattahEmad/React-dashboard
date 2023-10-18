@@ -12,7 +12,7 @@ import Settings from "./@dashboard/Pages/Settings/Settings";
 import Users from "./@dashboard/Pages/Users/Users";
 import Reviews from "./@dashboard/Pages/Reviews/Reviews";
 import Adresses from "./@dashboard/Pages/Adresses/Adresses";
-import AuthLayout from "./@auth/layout";
+import AuthLayout from "./@auth/pages/LayoutAuth/layout";
 import Auth from "./@auth/pages/login/login";
 
 function App() {

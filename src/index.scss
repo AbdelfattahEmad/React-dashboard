@@ -1,5 +1,6 @@
 * {
   font-family: "Hanken Grotesk", sans-serif;
+  box-sizing: border-box;
 }
 
 .Profil_Btn {
@@ -10,6 +11,9 @@
 
 .Profil_Btns {
   margin-right: 25px;
+  :hover{
+    background-color: aliceblue;
+  }
 }
 
 .dropdown-toggle {
