@@ -2,18 +2,13 @@ import React from "react";
 import "./login.scss"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import fb from "../../../assets/Images/fb.png";
-import gm from "../../../assets/Images/gm.png";
-import git from "../../../assets/Images/git.png";
-import w from "../../../assets/Images/w.png";
-
-
-
-
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faG } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
 
-  
   return (
   <div className="Login_Container">
     <div className="title">
@@ -47,23 +42,29 @@ const Login = () => {
     <div className="media">
       <p>Sign in with</p>
 
+
       <div className="images">
 
-        <img src="w"  />
-        <img src="gm"  />
-        <img src="git"  />
-        <img src="tw" />
+<FontAwesomeIcon icon={faFacebook} size='lg' style={{color: "#0953d3",marginRight:5}} />
+
+<FontAwesomeIcon icon={faG} size="xl" style={{color: "#e06d10",marginRight:5}} />   
+
+<FontAwesomeIcon icon={faGithub} size="xl" style={{color: "#17191c", marginRight:5}} />
+
+<FontAwesomeIcon icon={faTwitter} size="xl" style={{color: "#407add",}} />
+
+
 
       </div>
+
       
     </div>
 
-
-
     </div>
-    
 
-    
+    <div className="note">
+      <p>Dont Have any Account ?<span><Link to="signup" className="Link">sign up</Link></span></p>
+    </div>
   </div>
   )
 

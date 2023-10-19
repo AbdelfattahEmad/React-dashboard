@@ -1,4 +1,4 @@
-.Login_Container{
+.Signup_Container{
     border: 2px solid #eee;
     background-color: #ffffff;
     width: 60vh;
@@ -13,11 +13,15 @@
         margin-top: 1px;
         h5{
             color: #5d6c97;
+            font-size: 20px;
         }
         p{
             color: #bbbcc3;
+            font-size: 16px;
+
         }
     }
+
     .input_container{
         padding: 10px;
 
@@ -37,15 +41,20 @@
         }
 
         .media{
+            padding: 10px;
+
             p{
-                padding: 5px;
+                color:#bbbcc3;
             }
-            .images{
-                img{
-                    
-                }
-            }
+
         }
+
+        .note{
+            padding: 5px 3px;
+            margin: 5px 2px;
+        }
+    
+    
 
 
     }
@@ -60,5 +69,12 @@
         }
 
     }
+
+
+
+
+
+
+
 
 }

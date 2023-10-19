@@ -1,13 +1,17 @@
 import "./Topbar.scss";
 import egypt from "../../../assets/Images/egypt.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faEnvelope, faGear, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
+import ger from "../../../assets/Images/ger.png";
+import ital from "../../../assets/Images/ital.png";
+
 import Search from "../search/search";
-import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
+import { Link } from "react-router-dom";
+import { faYelp } from "@fortawesome/free-brands-svg-icons";
 
 const Topbar = () => {
   return (
@@ -27,50 +31,83 @@ const Topbar = () => {
 
           <div className="img">
 
-          <Dropdown as={ButtonGroup}>
+            <Dropdown >
 
-          <Dropdown.Toggle className="Profil_Btns">
-
-          <img src={egypt} alt="egypt" />
-
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">
-            <img src={eng} alt="egypt" />
-            </Dropdown.Item>
-          </Dropdown.Menu>
-
-        </Dropdown>
+              <Dropdown.Toggle className="Profil_Btns">
+              <img src={egypt} alt="egypt" />
+              </Dropdown.Toggle>
 
 
+              <Dropdown.Menu className="Menu_flags">
 
-
-
-
-            <Dropdown as={ButtonGroup}>
-              
-
-              <Dropdown.Toggle variant="link" />
-              
-
-
-              <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">
+                <img src={eng} alt="england" />
+                </Dropdown.Item>
+
+                <Dropdown.Item href="#/action-1" >
+                <img src={ger} alt="Germany" />
+                </Dropdown.Item>
+
+
+                <Dropdown.Item href="#/action-1" >
+                <img src={ital} alt="Italia" />
                 </Dropdown.Item>
               </Dropdown.Menu>
+
             </Dropdown>
+
           </div>
 
-          <FontAwesomeIcon
+          <div className="bell">
+          <Dropdown as={ButtonGroup}>
+
+        <Dropdown.Toggle className="Profil_Btns">
+        <FontAwesomeIcon
             icon={faBell}
             size="xl"
             style={{ color: "#525760", marginRight: 20, cursor: "pointer" }}
           />
+
+
+
+          
+        </Dropdown.Toggle>
+
+
+
+
+        <Dropdown.Menu className="Menu">
+
+          <Dropdown.Item href="#/action-1" className="menu_item">
+          <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
+          <Link className="Link"> 2525</Link>
+          
+          </Dropdown.Item>
+
+          <Dropdown.Item href="#/action-1" className="menu_item">
+          <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
+          <Link className="Link"> 2222</Link>
+          
+          </Dropdown.Item>
+
+
+          </Dropdown.Menu>
+            </Dropdown>
+
+
+
+          </div>
+
+
+
         </div>
+        
+
+
         <Dropdown as={ButtonGroup}>
 
           <Dropdown.Toggle className="Profil_Btns">
+
             <div className="name">
               <img src={abdo} alt="aboda" />
               <div className="data">
@@ -78,19 +115,49 @@ const Topbar = () => {
                 <p>Develober</p>
               </div>
             </div>
+            
           </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Messages</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Help</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Logout</Dropdown.Item>
+          <Dropdown.Menu className="Menu">
 
+            <Dropdown.Item href="#/action-1" className="menu_item">
+            <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
+            <Link className="Link"> Profile</Link>
+            
+            </Dropdown.Item>
+
+
+
+            <Dropdown.Item href="#/action-1" className="menu_item">
+            <FontAwesomeIcon icon={faGear} style={{color:"#4e5156", marginRight:5}} />
+            <Link className="Link"> Setting</Link>
+            
+            </Dropdown.Item>
+
+            <Dropdown.Item href="#/action-1" className="menu_item">
+            <FontAwesomeIcon icon={faEnvelope} style={{color:"#4e5156", marginRight:5}} />
+            <Link className="Link"> Messages</Link>
+            
+            </Dropdown.Item>
+
+            <Dropdown.Item href="#/action-1" className="menu_item">
+            <FontAwesomeIcon icon={faYelp} style={{color:"#4e5156", marginRight:5}} />
+            <Link className="Link"> Help</Link>
+            
+            </Dropdown.Item>
+
+            
+            <Dropdown.Item href="#/action-1" className="menu_item">
+            <FontAwesomeIcon icon={faRightFromBracket} style={{color:"#4e5156", marginRight:5}} />
+            <Link className="Link"> Log out</Link>
+            
+            </Dropdown.Item>
 
           </Dropdown.Menu>
         </Dropdown>
+
+
+
       </div>
     </div>
   );

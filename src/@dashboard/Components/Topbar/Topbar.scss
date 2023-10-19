@@ -25,9 +25,10 @@
         padding: 0;
         margin: 0;
       }
-      img {
-        width: 40px;
-        margin: 0px -14px;
+      .img {
+        .Menu_flags{
+          
+        }
       }
     }
   }
@@ -47,13 +48,30 @@
 
       .data {
         h5 {
-          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          color: black;
         }
 
         p {
           font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
             "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+      }
+    }
+    .Menu{
+      font-size: 18px;
+      font-family: "Hanken Grotesk", sans-serif;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(56,65,74,.15);
+      border-color: #f4f3f9;
+      width: 80px;
+      .menu_item{
+        color: #4e5156;
+
+
+        .Link{
+          text-decoration: none;
+          color: #4e5156;
+
         }
       }
     }

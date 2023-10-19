@@ -14,12 +14,17 @@ import Reviews from "./@dashboard/Pages/Reviews/Reviews";
 import Adresses from "./@dashboard/Pages/Adresses/Adresses";
 import AuthLayout from "./@auth/pages/LayoutAuth/layout";
 import Auth from "./@auth/pages/login/login";
+import Signup from "./@auth/pages/Signup/Signup";
+import Login from "./@auth/pages/login/login";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<AuthLayout />}>
         <Route index element={<Auth />} />
+        <Route path="signup" element={<Signup />} />
+
+       
       </Route>
 
       <Route path="/dashboard" element={<DashboardLayout />}>
