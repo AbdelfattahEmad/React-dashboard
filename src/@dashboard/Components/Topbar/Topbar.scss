@@ -11,27 +11,83 @@
   .Icons {
     display: flex;
     align-items: center;
+    .lang_flag {
+      margin-right: 10px;
+    .flag_Btn{
+        background-color: #ffffff;
+      }
 
-    .img {
-      margin-right: 15px;
-      .BTn{
-        padding: 10px 2px;
-        margin-right: -28px;
+      .Menu_flags{
 
+        .Flag_item{
+          text-align: center;
+        }
+      }
+
+      
+    }
+
+    .bell{
+      position: relative;
+      margin-right: 20px;
+      .Bell_Btns{
+        text-decoration: none;
+        background-color: #ffffff;
 
       }
-      .drop {
-        border: none;
+      .Menu_bell{
         padding: 0;
-        margin: 0;
-      }
-      .img {
-        .Menu_flags{
+
+        .menu_item{
+          width: 300px;
+          height: 150px;
+          padding: 4px 5px;
+
+          .Notifications{
+            background-color: #405189;
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0px;
+            h5{
+              color: #ffffff;
+              font-weight: bold;
+              font-size: 18px;
+            }
+            p{
+              border: 0.5px solid #ffffff;
+              background-color: #ffffff;
+              font-size: 12px;
+              padding: 3px;
+              border-radius: 4px;
+              color: black;
+              font-weight: bold;
           
+            }
+
+          }
+
+
         }
       }
     }
+
+    .Bel_not{
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      font-size: 10px;
+      padding: 3px;
+      background-color: #f06548;
+      color: #ffffff;
+      border-radius: 45%;
+      right: 7px;
+      bottom: 13px;
+      text-align: center;
+    }
+
+
   }
+
   .Personal_Data {
     display: flex;
     align-items: center;
@@ -41,19 +97,24 @@
     .name {
       background-color: #f4f3f9;
       border-radius: 4px;
-      padding:0px 10px;
+      padding:4px 10px;
       display: flex;
       align-items: center;
       cursor: pointer;
 
       .data {
+        background-color: #f4f3f9;
         h5 {
           color: black;
+          background-color: #f4f3f9;
+
         }
 
         p {
           font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
             "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            background-color: #f4f3f9;
+
         }
       }
     }

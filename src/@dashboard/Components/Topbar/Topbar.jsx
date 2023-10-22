@@ -15,7 +15,9 @@ import { faYelp } from "@fortawesome/free-brands-svg-icons";
 
 const Topbar = () => {
   return (
+
     <div className="Topbar_Container">
+      
       <div className="search_item">
         <FontAwesomeIcon
           icon={faBars}
@@ -29,91 +31,88 @@ const Topbar = () => {
 
         <div className="Icons">
 
-          <div className="img">
-
-            <Dropdown >
-
-              <Dropdown.Toggle className="Profil_Btns">
+          <div className="lang_flag">
+            <Dropdown  >
+              <Dropdown.Toggle className="flag_Btn" >
               <img src={egypt} alt="egypt" />
               </Dropdown.Toggle>
 
 
               <Dropdown.Menu className="Menu_flags">
 
-                <Dropdown.Item href="#/action-1">
+                <Dropdown.Item href="#/action-1" className="Flag_item">
                 <img src={eng} alt="england" />
                 </Dropdown.Item>
 
-                <Dropdown.Item href="#/action-1" >
+                <Dropdown.Item href="#/action-1" className="Flag_item" >
                 <img src={ger} alt="Germany" />
                 </Dropdown.Item>
 
 
-                <Dropdown.Item href="#/action-1" >
+                <Dropdown.Item href="#/action-1" className="Flag_item" >
                 <img src={ital} alt="Italia" />
                 </Dropdown.Item>
               </Dropdown.Menu>
 
-            </Dropdown>
 
+            </Dropdown>
           </div>
 
           <div className="bell">
-          <Dropdown as={ButtonGroup}>
 
-        <Dropdown.Toggle className="Profil_Btns">
-        <FontAwesomeIcon
-            icon={faBell}
-            size="xl"
-            style={{ color: "#525760", marginRight: 20, cursor: "pointer" }}
-          />
-
-
-
-          
-        </Dropdown.Toggle>
+          <Dropdown>
+            <Dropdown.Toggle className="Bell_Btns">
+            <FontAwesomeIcon
+                icon={faBell}
+                size="xl"
+                style={{ color: "#525760", marginRight: 20, cursor: "pointer" }}
+              />
+            </Dropdown.Toggle>
 
 
+        <Dropdown.Menu className="Menu_bell">
 
+          <Dropdown.Item href="#/action-1" className="menu_item" style={{backgroundColor:"#405189",height:60 }}>
 
-        <Dropdown.Menu className="Menu">
-
-          <Dropdown.Item href="#/action-1" className="menu_item">
-          <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
-          <Link className="Link"> 2525</Link>
+          <div className="Notifications">
+            <h5>Notifications</h5>
+            <p>5 New</p>
+          </div>
           
           </Dropdown.Item>
 
           <Dropdown.Item href="#/action-1" className="menu_item">
-          <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
-          <Link className="Link"> 2222</Link>
+          <Link className="Link"> </Link>
           
           </Dropdown.Item>
 
 
           </Dropdown.Menu>
+
+
+
+
             </Dropdown>
+
+            <span className="Bel_not">4</span>
+
 
 
 
           </div>
-
-
-
         </div>
         
 
-
-        <Dropdown as={ButtonGroup}>
+        <Dropdown>
 
           <Dropdown.Toggle className="Profil_Btns">
 
             <div className="name">
-              <img src={abdo} alt="aboda" />
-              <div className="data">
-                <h5>Abdelfatah</h5>
-                <p>Develober</p>
-              </div>
+                <img src={abdo} alt="aboda" />
+                <div className="data">
+                  <h5>Abdelfatah</h5>
+                  <p>Develober</p>
+                </div>
             </div>
             
           </Dropdown.Toggle>
@@ -159,7 +158,9 @@ const Topbar = () => {
 
 
       </div>
+
     </div>
+    
   );
 };
 
