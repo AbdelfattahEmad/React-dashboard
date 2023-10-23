@@ -6,12 +6,13 @@ import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
 import ger from "../../../assets/Images/ger.png";
 import ital from "../../../assets/Images/ital.png";
-
 import Search from "../search/search";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 import { faYelp } from "@fortawesome/free-brands-svg-icons";
+import NotifictionTap from "../NotictionsTap/Notifiction";
+
+
 
 const Topbar = () => {
   return (
@@ -30,6 +31,9 @@ const Topbar = () => {
       <div className="Personal_Data">
 
         <div className="Icons">
+
+                  {/* start langeues flag */}
+
 
           <div className="lang_flag">
             <Dropdown  >
@@ -58,7 +62,17 @@ const Topbar = () => {
             </Dropdown>
           </div>
 
+                            {/* end langeues flag */}
+
+
+
+
+
+
+        {/* start Bell Notifctions  */}
+
           <div className="bell">
+
 
           <Dropdown>
             <Dropdown.Toggle className="Bell_Btns">
@@ -77,31 +91,44 @@ const Topbar = () => {
           <div className="Notifications">
             <h5>Notifications</h5>
             <p>5 New</p>
+
           </div>
           
           </Dropdown.Item>
 
-          <Dropdown.Item href="#/action-1" className="menu_item">
-          <Link className="Link"> </Link>
-          
-          </Dropdown.Item>
+       <Dropdown.Item href="#/action-1" className="menu_item" >
+
+        < NotifictionTap />
+
+
+        </Dropdown.Item>
+
+
+
+
 
 
           </Dropdown.Menu>
 
 
-
-
             </Dropdown>
-
             <span className="Bel_not">4</span>
-
-
-
-
           </div>
+
+
+
+
+
+
+        {/* end Bell Notifctions  */}
+
+
         </div>
         
+
+
+
+        {/* start Profile personly */}
 
         <Dropdown>
 
@@ -116,6 +143,8 @@ const Topbar = () => {
             </div>
             
           </Dropdown.Toggle>
+
+
 
           <Dropdown.Menu className="Menu">
 
@@ -153,7 +182,11 @@ const Topbar = () => {
             </Dropdown.Item>
 
           </Dropdown.Menu>
+
+
         </Dropdown>
+
+        {/* end Profile personly */}
 
 
 

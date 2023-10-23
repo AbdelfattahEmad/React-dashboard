@@ -37,11 +37,12 @@
       }
       .Menu_bell{
         padding: 0;
+        width: 400px;
+        height: 400px;
 
         .menu_item{
-          width: 300px;
           height: 150px;
-          padding: 4px 5px;
+          padding: 0px 0px;
 
           .Notifications{
             background-color: #405189;
@@ -52,18 +53,43 @@
               color: #ffffff;
               font-weight: bold;
               font-size: 18px;
+              padding: 2px;
+              margin: 10px 5px 3px 5px;
+
             }
             p{
               border: 0.5px solid #ffffff;
               background-color: #ffffff;
               font-size: 12px;
-              padding: 3px;
+              padding: 4px;
               border-radius: 4px;
               color: black;
               font-weight: bold;
-          
+              margin: 10px 5px 3px 5px;
             }
 
+          }
+          .Head_nav{
+            background-color: #405189;
+            padding: 0px 0px;
+            .nav_item{
+
+              
+              :hover{
+                background-color: #ffffff;
+
+              }
+
+              .navLink{
+                color: #aaa2b0;
+
+                :hover{
+                  color: #405189;
+  
+
+                }
+              }
+            }
           }
 
 
@@ -127,15 +153,14 @@
       width: 80px;
       .menu_item{
         color: #4e5156;
-
-
         .Link{
           text-decoration: none;
           color: #4e5156;
-
         }
       }
     }
+
+
 
     img {
       width: 50px;
