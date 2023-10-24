@@ -9,6 +9,4 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   defaultNS: 'translation',
 });
 
-i18n.changeLanguage('ar');
-
 export default i18n;
