@@ -1,22 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.scss'
-import { BrowserRouter } from 'react-router-dom'
-import './assets/languages/i18n.js';
-import { withTranslation } from 'react-i18next';
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.scss';
+import { BrowserRouter } from 'react-router-dom';
+import './i18n.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
-    
-  </React.StrictMode>,
-
+  </React.StrictMode>
 );
 
-export default withTranslation()(App);
-
+export default App;
