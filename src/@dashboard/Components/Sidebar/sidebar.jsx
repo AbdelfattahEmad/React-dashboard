@@ -1,4 +1,3 @@
-import React from "react";
 import "./sidebar.scss";
 import logo from "../../../assets/Images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,9 +18,12 @@ import {
   faJediOrder,
   faProductHunt,
 } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
 
 const Sidebar = () => {
+
+  const {t} =useTranslation()
   return (
     <div className="Sidebar_Container">
       <div className="Sidebar_Logo">
@@ -30,7 +32,7 @@ const Sidebar = () => {
         </Link>
       </div>
 
-      <p className="Title"> Menu</p>
+      <p className="Title"> </p>
 
       <ul className="menu-list">
 
@@ -38,7 +40,7 @@ const Sidebar = () => {
 
           <Link  to="Categories" className="menu-list__link">
             <FontAwesomeIcon icon={faGaugeHigh} className="menu-list__icon" />
-            Categories
+            {t("categories")}
           </Link>
 
         </li>

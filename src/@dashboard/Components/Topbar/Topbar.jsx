@@ -11,10 +11,15 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 import { faYelp } from "@fortawesome/free-brands-svg-icons";
 import NotifictionTap from "../NotictionsTap/Notifiction";
+import i18n from "../../../i18n";
+import { useState } from "react";
 
 
 
 const Topbar = () => {
+
+
+  
 
 
 
@@ -39,26 +44,59 @@ const Topbar = () => {
 
 
           <div className="lang_flag">
-            <Dropdown  >
+
+            <Dropdown  onSelect={( eventKey , event )=>{
+
+              if(eventKey === "ar"){
+
+                document.documentElement.setAttribute("dir", "rtl")
+                document.documentElement.setAttribute("lang", "ar")
+                localStorage.setItem("i18nextLng" , "ar" )
+                i18n.changeLanguage("ar")
+
+              }else{
+
+                document.documentElement.setAttribute("dir", "ltr")
+                document.documentElement.setAttribute("lang", "en")
+                localStorage.setItem("i18nextLng" , "en" )
+
+                i18n.changeLanguage("en")
+
+              }
+
+            }} >
+
               <Dropdown.Toggle className="flag_Btn" >
-              <img src={egypt} alt="egypt" />
+                {
+                    i18n.dir() === "rtl" ?  <img src={egypt} alt="egypt"  /> : <img src={eng} alt="england" />
+
+                }
+             
+
               </Dropdown.Toggle>
 
 
               <Dropdown.Menu className="Menu_flags">
+                {
+                  i18n.dir() === "rtl" ? <Dropdown.Item  eventKey="en"  className="Flag_item">
+                  
+                  <img src={eng} alt="england" />
+                  </Dropdown.Item>
+  
+                   : 
+                   <Dropdown.Item  eventKey="ar"  className="Flag_item" >
+                
+                   <img src={egypt} alt="egypt"  />
+                     </Dropdown.Item>
+     
+                    
 
-                <Dropdown.Item href="#/action-1" className="Flag_item">
-                <img src={eng} alt="england" />
-                </Dropdown.Item>
-
-                <Dropdown.Item href="#/action-1" className="Flag_item" >
-                <img src={ger} alt="Germany" />
-                </Dropdown.Item>
+                }
 
 
-                <Dropdown.Item href="#/action-1" className="Flag_item" >
-                <img src={ital} alt="Italia" />
-                </Dropdown.Item>
+
+                
+
               </Dropdown.Menu>
 
 
@@ -77,7 +115,7 @@ const Topbar = () => {
           <div className="bell">
 
 
-          <Dropdown>
+          <Dropdown autoClose="outside">
             <Dropdown.Toggle className="Bell_Btns">
             <FontAwesomeIcon
                 icon={faBell}
@@ -89,7 +127,7 @@ const Topbar = () => {
 
         <Dropdown.Menu className="Menu_bell">
 
-          <Dropdown.Item href="#/action-1" className="menu_item" style={{backgroundColor:"#405189",height:60 }}>
+          <Dropdown.Item  className="menu_item" style={{backgroundColor:"#405189",height:60 }}>
 
           <div className="Notifications">
             <h5>Notifications</h5>
@@ -99,7 +137,7 @@ const Topbar = () => {
           
           </Dropdown.Item>
 
-       <Dropdown.Item href="#/action-1" className="menu_item" >
+       <Dropdown.Item  className="menu_item" >
 
         < NotifictionTap />
 
@@ -151,7 +189,7 @@ const Topbar = () => {
 
           <Dropdown.Menu className="Menu">
 
-            <Dropdown.Item href="#/action-1" className="menu_item">
+            <Dropdown.Item  className="menu_item">
             <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
             <Link className="Link"> Profile</Link>
             

@@ -15,9 +15,39 @@ import Adresses from './@dashboard/Pages/Adresses/Adresses';
 import AuthLayout from './@auth/pages/LayoutAuth/layout';
 import Auth from './@auth/pages/login/login';
 import Signup from './@auth/pages/Signup/Signup';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
+import i18n from './i18n';
 
 function App() {
+
+  const detectLangue =()=>{
+
+    const lang = localStorage.getItem("i18nextLng") 
+
+    if(lang === "ar"){
+
+      document.documentElement.setAttribute("dir", "rtl")
+      document.documentElement.setAttribute("lang", "ar")
+      localStorage.setItem("i18nextLng" , "ar" )
+      i18n.changeLanguage("ar")
+
+    }else{
+
+      document.documentElement.setAttribute("dir", "ltr")
+      document.documentElement.setAttribute("lang", "en")
+      localStorage.setItem("i18nextLng" , "en" )
+
+      i18n.changeLanguage("en")
+
+    }
+
+  }
+
+  useEffect(()=>{
+
+    detectLangue()
+
+  },[])
   return (
     <>
       <Suspense>
