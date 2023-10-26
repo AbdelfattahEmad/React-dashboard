@@ -1,5 +1,7 @@
+@import './assets/scss/main.scss';
+
 * {
-  font-family: "Hanken Grotesk", sans-serif;
+  font-family: 'Hanken Grotesk', sans-serif;
   box-sizing: border-box;
 }
 
@@ -11,7 +13,7 @@
 
 .Profil_Btns {
   margin-right: 25px;
-  :hover{
+  :hover {
     background-color: aliceblue;
   }
 }
@@ -24,5 +26,3 @@
     display: none;
   }
 }
-
-
