@@ -1,8 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 
 const Users = () => {
+  const {t}=useTranslation()
+
   return (
-    <div>Users</div>
+    <div>{t("user data")}</div>
   )
 }
 

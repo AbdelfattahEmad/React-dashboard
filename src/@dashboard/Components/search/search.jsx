@@ -12,8 +12,7 @@ const Search = () => {
           style={{ color: "#878a99", marginRight: 10, fontSize: 13 }}
         />
       </button>
-
-      <input className="search__input" placeholder="search..." alt="search" />
+      <input className="search__input" placeholder="search... " alt="search" />
     </div>
   );
 };

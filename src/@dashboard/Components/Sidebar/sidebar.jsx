@@ -32,7 +32,9 @@ const Sidebar = () => {
         </Link>
       </div>
 
-      <p className="Title"> </p>
+      <p className="Title">
+        {t("Menu")}
+      </p>
 
       <ul className="menu-list">
 
@@ -49,7 +51,7 @@ const Sidebar = () => {
 
           <Link  to ="SubCategories" className="menu-list__link">
             <FontAwesomeIcon icon={faCircleHalfStroke} className="menu-list__icon" />
-            SubCategories
+            {t("subcategories")}
           </Link>
 
         </li>
@@ -59,8 +61,7 @@ const Sidebar = () => {
 
         <Link to="Brands"  className="menu-list__link">
           <FontAwesomeIcon icon={faBandcamp} className="menu-list__icon" />
-          Brands
-       
+          {t("Brands")}
         </Link>
 
         </li>
@@ -70,9 +71,8 @@ const Sidebar = () => {
 
           <Link to="Products"  className="menu-list__link">
             <FontAwesomeIcon icon={faProductHunt} className="menu-list__icon" />
-            Products
+            {t("products")}
           </Link>
-
         </li>
 
 
@@ -80,7 +80,9 @@ const Sidebar = () => {
 
           <Link to="Coupons" className="menu-list__link">
             <FontAwesomeIcon icon={faCube} className="menu-list__icon" />
-            Coupons
+            {t("coupons")}
+
+           
           </Link>
 
         </li>
@@ -91,7 +93,8 @@ const Sidebar = () => {
 
           <Link to="Orders" className="menu-list__link">
             <FontAwesomeIcon icon={faJediOrder} className="menu-list__icon" />
-            Orders
+            {t("orders")}
+
           </Link>
 
           </li>
@@ -102,7 +105,8 @@ const Sidebar = () => {
 
         <Link to="Settings" className="menu-list__link">
           <FontAwesomeIcon icon={faGear} className="menu-list__icon" />
-            Settings
+          {t("settings")}
+
         </Link>
 
           </li>
@@ -112,7 +116,8 @@ const Sidebar = () => {
 
         <Link  to="Users" className="menu-list__link">
           <FontAwesomeIcon icon={faUser} className="menu-list__icon" />
-          User Adresses
+          {t("user data")}
+
         </Link>
 
         </li>
@@ -121,7 +126,7 @@ const Sidebar = () => {
 
         <Link to="Reviews" className="menu-list__link">
           <FontAwesomeIcon icon={faRegistered} className="menu-list__icon" />
-              Reviews
+          {t("Reviews")}
         </Link>
         </li>
 

@@ -1,8 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Coupons = () => {
+  
+  const {t}=useTranslation()
+
   return (
-    <div>Coupons</div>
+    <div>{t("coupons")} </div>
   )
 }
 

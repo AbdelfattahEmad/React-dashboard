@@ -7,10 +7,15 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import abdo from "../../../assets/Images/abdo.jpg"
 import bell from "../../../assets/Images/bell.png"
+import { useTranslation } from 'react-i18next';
+
 
 
 
 const NotifictionTap = () => {
+
+  const {t} =useTranslation()
+
   return (
     <div className='Notifictions_head'>
 
@@ -23,26 +28,26 @@ const NotifictionTap = () => {
 
             <div className='Tab_item'>
                 <FontAwesomeIcon icon={faGear} style={{color: "#c4cfe4",}} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+                 <p>{t("you Have notifction")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
             <div className='Tab_item'>
                 <FontAwesomeIcon icon={faGear} style={{color: "#c4cfe4",}} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+                <p>{t("you Have notifction")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
             <div className='Tab_item'>
                 <FontAwesomeIcon icon={faGear} style={{color: "#c4cfe4",}} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+                <p>{t("you Have notifction")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
 
             <div className='Tab_item'>
                 <FontAwesomeIcon icon={faGear} style={{color: "#c4cfe4",}} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+                <p>{t("you Have notifction")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
@@ -57,27 +62,27 @@ const NotifictionTap = () => {
 
       <div className='Tab_item '>
         <img src={abdo} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+        <p>{t("you may have a new message")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
             <div className='Tab_item '>
         <img src={abdo} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
+        <p>{t("you may have a new message")} </p>
                     <Form.Check aria-label="option 1" />
             </div>
 
             <div className='Tab_item '>
-        <img src={abdo} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
-                    <Form.Check aria-label="option 1" />
+          <img src={abdo} />
+          <p>{t("you may have a new message")} </p>
+                      <Form.Check aria-label="option 1" />
             </div>
 
-            <div className='Tab_item '>
-        <img src={abdo} />
-                 <p> Your Elite author Graphic <br/> Optimization</p>
-                    <Form.Check aria-label="option 1" />
-            </div>
+          <div className='Tab_item '>
+            <img src={abdo} />
+            <p>{t("you may have a new message")} </p>
+            <Form.Check aria-label="option 1" />
+          </div>
       </Tab>
 
 
@@ -85,12 +90,11 @@ const NotifictionTap = () => {
 
         <img src={bell} />
 
-        <h2>Hey! You have no  <br /> any notifications</h2>
-
-
+        <h2> {t("Hey! You have no")} <br />  {t("any notifications")}</h2>
 
       </Tab>
     </Tabs>
+    
 
     </div>
   )

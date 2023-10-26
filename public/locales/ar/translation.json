@@ -1,6 +1,28 @@
 {
-  "welcome": "مرحبا بك!",
+  "Menu":"القائمه",
   "categories":"التصنيفات",
-  "subcategories":"التصنيفات الفرعيه "
+  "subcategories":"التصنيفات الفرعيه",
+  "Brands":"البرندات",
+  "products":"المنتجات",
+  "coupons" :"الكوبونات",
+  "orders":"الطلبات",
+  "settings" :"الاعدادات",
+  "user data" :"بيانات المستخدمين ",
+  "Reviews":"المراجعات",
+  "Notifications":"الاشعارات",
+  "New": " وارد جديد",
+  "Hey! You have no": "هلا ! ليس لديك ",
+  "any notifications" : "اي اشعارات وارده",
+  "you Have notifction":"لديك اشعار الان ",
+  "you may have a new message":"قد تكون لديك رسالة جديدة",
+  "abdelfatah":"عبدالفتاح",
+  "programmer":"مبرمج",
+  "Profile":" الشخصيه",
+  "Setting":"الاعدادات",
+  "Messages":"الرسائل",
+  "Help" :"المساعدات",
+  "Log out":"تسجيل الخروج"
+  
+
 
 }

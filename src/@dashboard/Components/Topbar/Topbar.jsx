@@ -12,15 +12,11 @@ import { Link } from "react-router-dom";
 import { faYelp } from "@fortawesome/free-brands-svg-icons";
 import NotifictionTap from "../NotictionsTap/Notifiction";
 import i18n from "../../../i18n";
-import { useState } from "react";
-
-
+import { useTranslation } from "react-i18next";
 
 const Topbar = () => {
 
-
-  
-
+  const {t} =useTranslation()
 
 
   return (
@@ -40,7 +36,7 @@ const Topbar = () => {
 
         <div className="Icons">
 
-                  {/* start langeues flag */}
+          {/* start langeues flag */}
 
 
           <div className="lang_flag">
@@ -103,9 +99,7 @@ const Topbar = () => {
             </Dropdown>
           </div>
 
-                            {/* end langeues flag */}
-
-
+          {/* end langeues flag */}
 
 
 
@@ -130,8 +124,8 @@ const Topbar = () => {
           <Dropdown.Item  className="menu_item" style={{backgroundColor:"#405189",height:60 }}>
 
           <div className="Notifications">
-            <h5>Notifications</h5>
-            <p>5 New</p>
+            <h5>{t("Notifications")}</h5>
+            <p>5{t("New")}</p>
 
           </div>
           
@@ -156,13 +150,7 @@ const Topbar = () => {
             <span className="Bel_not">4</span>
           </div>
 
-
-
-
-
-
         {/* end Bell Notifctions  */}
-
 
         </div>
         
@@ -178,8 +166,8 @@ const Topbar = () => {
             <div className="name">
                 <img src={abdo} alt="aboda" />
                 <div className="data">
-                  <h5>Abdelfatah</h5>
-                  <p>Develober</p>
+                  <h5>{t("abdelfatah")}</h5>
+                  <p>{t("programmer")}</p>
                 </div>
             </div>
             
@@ -191,7 +179,7 @@ const Topbar = () => {
 
             <Dropdown.Item  className="menu_item">
             <FontAwesomeIcon icon={faUser} style={{color: "#4e5156", marginRight:5}} />
-            <Link className="Link"> Profile</Link>
+            <Link className="Link">  {t("Profile")} </Link>
             
             </Dropdown.Item>
 
@@ -199,26 +187,26 @@ const Topbar = () => {
 
             <Dropdown.Item href="#/action-1" className="menu_item">
             <FontAwesomeIcon icon={faGear} style={{color:"#4e5156", marginRight:5}} />
-            <Link className="Link"> Setting</Link>
+            <Link className="Link"> {t("Setting")}</Link>
             
             </Dropdown.Item>
 
             <Dropdown.Item href="#/action-1" className="menu_item">
             <FontAwesomeIcon icon={faEnvelope} style={{color:"#4e5156", marginRight:5}} />
-            <Link className="Link"> Messages</Link>
+            <Link className="Link">{t("Messages")}</Link>
             
             </Dropdown.Item>
 
             <Dropdown.Item href="#/action-1" className="menu_item">
             <FontAwesomeIcon icon={faYelp} style={{color:"#4e5156", marginRight:5}} />
-            <Link className="Link"> Help</Link>
+            <Link className="Link"> {t("Help")}</Link>
             
             </Dropdown.Item>
 
             
             <Dropdown.Item href="#/action-1" className="menu_item">
             <FontAwesomeIcon icon={faRightFromBracket} style={{color:"#4e5156", marginRight:5}} />
-            <Link className="Link"> Log out</Link>
+            <Link className="Link">{t("Log out")}</Link>
             
             </Dropdown.Item>
 

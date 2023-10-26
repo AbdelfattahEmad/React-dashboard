@@ -1,6 +1,14 @@
 {
-  "welcome": "welcome to react",
+  "Menu":"Menu",
   "categories":"categories",
-  "subcategories" : "subcategories"
+  "subcategories" : "subcategories",
+  "Brands":"Brands",
+  "products":"products",
+  "coupons" :"coupons",
+  "orders":"orders",
+  "settings" :"settings",
+  "user data" :" user data ",
+  "Reviews":"Reviews"
+
 
 }
