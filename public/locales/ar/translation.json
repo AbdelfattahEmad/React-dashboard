@@ -21,7 +21,14 @@
   "Setting":"الاعدادات",
   "Messages":"الرسائل",
   "Help" :"المساعدات",
-  "Log out":"تسجيل الخروج"
+  "Log out":"تسجيل الخروج",
+  "show Category" : "أظهر المنتج",
+  "Category Descreption":"وصف الفئه",
+  "Category Title" : "عنوان الفئه",
+  "Product Title" :"عنوان المنتج",
+  "Product Descreption":"وصف المنتج",
+  "show Product":" عرض المنتج"
+
   
 
 
