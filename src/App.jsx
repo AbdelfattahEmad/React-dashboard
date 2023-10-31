@@ -44,9 +44,7 @@ function App() {
   }
 
   useEffect(()=>{
-
     detectLangue()
-
   },[])
   return (
     <>
@@ -59,7 +57,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
 
-          <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<DashboardLayout />}>s
             <Route path="" element={<Products />} />
             <Route path="Categories" element={<Category />} />
             <Route path="SubCategories" element={<SubCategory />} />

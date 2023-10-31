@@ -1,18 +1,55 @@
+@import '../../assets/scss/utils/mixins';
+@import '../../assets/scss/utils/Variables.scss';
+
+
 .Layout_Container{
     display: flex;
+
     
     .Content_Container{
 
         width: calc(100% - 250px);
         background-color: #f4f3f9;
+        height: 100vh;
+        position: absolute;
+        inset-inline-start: 250px;
+
+        @include responsiveView {
+        inset-inline-start: 0px;
+        width: 100%;
 
 
+
+        }
+
+            
         .Topabar{
             background-color: #ffffff;
             padding: 0px 15px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: calc(100% - 250px);
+            inset-inline-start: 250px;
+
+            @include responsiveView {
+                inset-inline-start: 0px;
+                width: 100%;
+        
+        
+        
+                }
+        
+
+            
+    
+
 
          }
         .Content{
+            padding-top: 68px;
+             overflow-y: auto;
 
         }
 

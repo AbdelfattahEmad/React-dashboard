@@ -1,8 +1,31 @@
+@import '../../../assets/scss/utils/mixins';
+
+.sidebar{
+  position: fixed;
+    inset-inline-start: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+
+  @include responsiveView {
+    
+    inset-inline-start: -100%;
+
+
+
+  }
+
+  
+}
+
 .Sidebar_Container {
   width: 250px;
   height: 100vh;
   border: 1px solid #eee;
   background-color: #405189;
+  overflow-y: auto;
+
+
 
   .Sidebar_Logo {
     margin-bottom: 20px;

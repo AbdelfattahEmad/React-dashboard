@@ -1,3 +1,7 @@
+@import "@scss/utils/Variables.scss";
+@import "@scss/utils/mixins";
+
+
 
 .Topbar_Container {
   display: flex;
@@ -7,6 +11,7 @@
   .search_item {
     display: flex;
     align-items: center;
+
   }
 
   .Icons {
@@ -114,10 +119,15 @@
       align-items: center;
       cursor: pointer;
 
+
       .data {
         background-color: #f4f3f9;
         margin-inline-start: 8px;
         margin-inline-start: 10px;
+        @include xs {
+
+          font-size: 15px;
+        }
          }
 
         h5 {
@@ -152,6 +162,15 @@
       width: 50px;
       border-radius: 50px;
       margin-right: 20px;
+
+      @include xs {
+        width: 35px;
+        border-radius: 50px;
+        margin-right: 20px;
+  
+        
+        }
+  
     }
     h5 {
       font-size: 15px;
