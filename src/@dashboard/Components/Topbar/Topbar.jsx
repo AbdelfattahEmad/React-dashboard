@@ -1,7 +1,7 @@
 import "./Topbar.scss";
 import egypt from "../../../assets/Images/egypt.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBell, faEnvelope, faGear, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faEnvelope, faGear, faRightFromBracket, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
 import Search from "../search/search";
@@ -13,12 +13,15 @@ import i18n from "../../../i18n";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from 'react';
 import i18next from 'i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import {uiActions} from '../../../Redux/store/slices/ui-slice';
+import { useDispatch } from "react-redux";
+import {uiActions} from "../../../Redux/store/slices/ui-slice"
 
 
 
 const Topbar = () => {
+
+
+    {/* Translation */}
 
 
   const [lang, setLang] = useState(localStorage.getItem('i18nextLng'));
@@ -32,32 +35,49 @@ const Topbar = () => {
   }, []);
 
 
-  const { sideMenuCollapsed } = useSelector((state) => state.uiState);
-  
-  const dispatch = useDispatch();
+      {/* end Translation */}
 
-  function toggleMenu(){
-    dispatch(uiActions.toggleSidebar())
-  }
+
+
+
+      {/* open side bar */}
+
+
+      const dispatch = useDispatch();
+
+      function toggleMenu(){
+    
+        dispatch(uiActions.toggleSidebar())
+    
+      }
+    
+
+    {/* open sidebar */}
+
+
+
+    
 
 
 
 
   return (
-    <div className= { ( sideMenuCollapsed ? 'sidebar-closed' : '')}>
 
     <div className="Topbar_Container">
-      <div className="search_item">
+
+
+      <div className="search_item"> 
         <div onClick={toggleMenu}>
         <FontAwesomeIcon
           icon={faBars}
           size="xl"
           style={{ color: '#878a99', marginRight: 10,cursor:"pointer" }}
         />
-
-
         </div>
+
+
         <Search />
+
       </div>
 
 
@@ -67,7 +87,6 @@ const Topbar = () => {
         <div className="Icons">
 
           {/* start langeues flag */}
-
           <div className="lang_flag">
             <Dropdown
               onSelect={(eventKey) => {
@@ -106,17 +125,11 @@ const Topbar = () => {
             </Dropdown>
 
           </div>
-
           {/* end langeues flag */}
 
 
 
-
-
-
-
         {/* start Bell Notifctions  */}
-
           <div className="bell">
 
           <Dropdown autoClose="outside">
@@ -150,14 +163,12 @@ const Topbar = () => {
             <span className="Bel_not">4</span>
 
           </div>
-
-
-
         {/* end Bell Notifctions  */}
 
 
-        {/* start Profile personly */}
 
+
+        {/* start Profile personly */}
         <Dropdown>
           <Dropdown.Toggle className="Profil_Btns">
             <div className="name">
@@ -216,21 +227,15 @@ const Topbar = () => {
         {/* end Profile personly */}
 
 
-
-
-
       </div>
     </div>
 
 
     
     </div>
-
-    </div>
-
-
-
   );
+
+
 };
 
 export default Topbar;

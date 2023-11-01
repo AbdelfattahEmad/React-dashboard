@@ -24,8 +24,18 @@ import { useTranslation } from "react-i18next";
 const Sidebar = () => {
 
   const {t} =useTranslation()
+
+
+
+  
+
+
   return (
+
+  
+
     <div className="Sidebar_Container">
+
       <div className="Sidebar_Logo">
         <Link to="/">
           <img src={logo} alt="Logo" />
@@ -133,6 +143,8 @@ const Sidebar = () => {
       </ul>
 
     </div>
+
+
   );
 };
 

@@ -3,22 +3,44 @@
 
 
 .Layout_Container{
-    display: flex;
+    position: relative;
 
-    
+    .sidebar{
+        position: fixed;
+          inset-inline-start: 0;
+          top: 0;
+          bottom: 0;
+          height: 100vh;
+          transition:transform .9s ease-in-out;
+          @include responsiveView {
+            transform: translateX(-100%); 
+            transition:transform .9s ease-in-out;
+         }
+
+         @include Collapsed {
+            transform: translateX(-100%); 
+            transition:transform .9s ease-in-out;
+
+         }
+      }
+
     .Content_Container{
-
         width: calc(100% - 250px);
         background-color: #f4f3f9;
         height: 100vh;
         position: absolute;
         inset-inline-start: 250px;
-
         @include responsiveView {
         inset-inline-start: 0px;
         width: 100%;
-
         }
+
+        @include Collapsed {
+            inset-inline-start: 0px;
+            width: 100%;
+        }
+
+
 
             
         .Topabar{
@@ -30,21 +52,17 @@
             top: 0;
             width: calc(100% - 250px);
             inset-inline-start: 250px;
-
             @include responsiveView {
                 inset-inline-start: 0px;
                 width: 100%;
-        
-        
-        
+                }
+                @include Collapsed {
+                    inset-inline-start: 0px;
+                    width: 100%;
                 }
         
-
-            
-    
-
-
          }
+         
         .Content{
             padding-top: 68px;
              overflow-y: auto;

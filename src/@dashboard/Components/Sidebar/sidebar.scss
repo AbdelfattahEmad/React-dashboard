@@ -1,22 +1,9 @@
 @import '../../../assets/scss/utils/mixins';
 
-.sidebar{
-  position: fixed;
-    inset-inline-start: 0;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-
-  @include responsiveView {
-    
-    inset-inline-start: -100%;
 
 
 
-  }
 
-  
-}
 
 .Sidebar_Container {
   width: 250px;
