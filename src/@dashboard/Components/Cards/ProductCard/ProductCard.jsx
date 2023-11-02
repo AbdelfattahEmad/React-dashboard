@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import bag33 from "../../../../assets/Images/bag33.jpg"
 import { useTranslation } from 'react-i18next'
+import "./ProductCard.scss"
 
 
 
@@ -12,7 +13,7 @@ const ProductCard = () => {
 
     <>
 
-    <Card style={{ width: '18rem' }} className='Card'>
+    <Card style={{ width: '18rem' }} className='Product_Card'>
       <Card.Img variant="top" src={bag33} />
       <Card.Body>
         <Card.Title>{t("Product Title")}</Card.Title>

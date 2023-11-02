@@ -1,0 +1,53 @@
+.Titles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    margin: 15px 25px;
+  
+    P{
+      font-size: 17px;
+      font-family: monospace;
+      font-weight: bold;
+      border: 1px solid #ef6548;
+      padding: 8px;
+      background-color:white;
+      color: #ef6548;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      
+      &:hover{
+
+        background-color:#ef6548;
+        color: white;
+      }
+  
+    }
+  
+    .Link_Title{
+      font-size: 17px;
+      font-family: monospace;
+      font-weight: bold;
+      border: 1px solid #0ab39c;
+      padding: 5px 20px;
+      background-color:white ;
+      color: #0ab39c;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      border-radius: 50px;
+      &:hover{
+
+        background-color: #0ab39c;
+        color: white;
+  
+        border: 1px solid white;
+  
+    
+  
+      }
+  
+  
+  
+    }
+  
+  }
+  

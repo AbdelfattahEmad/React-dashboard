@@ -34,38 +34,20 @@ const Topbar = () => {
     });
   }, []);
 
-
       {/* end Translation */}
 
-
-
-
       {/* open side bar */}
-
-
       const dispatch = useDispatch();
 
       function toggleMenu(){
     
         dispatch(uiActions.toggleSidebar())
-    
       }
-    
-
+  
     {/* open sidebar */}
-
-
-
-    
-
-
-
-
   return (
 
     <div className="Topbar_Container">
-
-
       <div className="search_item"> 
         <div onClick={toggleMenu}>
         <FontAwesomeIcon
@@ -75,12 +57,9 @@ const Topbar = () => {
         />
         </div>
 
-
         <Search />
 
       </div>
-
-
 
 
       <div className="Personal_Data">

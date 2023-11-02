@@ -17,6 +17,7 @@ import Auth from './@auth/pages/login/login';
 import Signup from './@auth/pages/Signup/Signup';
 import { Suspense, useEffect } from 'react';
 import i18n from './i18n';
+import Main from './@dashboard/Pages/Main/Main';
 
 function App() {
 
@@ -58,7 +59,8 @@ function App() {
           </Route>
 
           <Route path="/dashboard" element={<DashboardLayout />}>s
-            <Route path="" element={<Products />} />
+            <Route path="" element={<Main />} />
+            <Route path="Main" element={<Main />} />
             <Route path="Categories" element={<Category />} />
             <Route path="SubCategories" element={<SubCategory />} />
             <Route path="Brands" element={<Brands />} />

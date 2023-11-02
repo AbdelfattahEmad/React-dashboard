@@ -8,6 +8,7 @@ import {
   faCube,
   faGaugeHigh,
   faGear,
+  faHouse,
   faRegistered,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +34,6 @@ const Sidebar = () => {
   return (
 
   
-
     <div className="Sidebar_Container">
 
       <div className="Sidebar_Logo">
@@ -47,6 +47,16 @@ const Sidebar = () => {
       </p>
 
       <ul className="menu-list">
+
+      <li className="menu-list__item">
+
+        <Link  to="Main" className="menu-list__link">
+          <FontAwesomeIcon icon={faHouse}  className="menu-list__icon" />
+          {t("Main")}
+        </Link>
+
+      </li>
+
 
         <li className="menu-list__item">
 

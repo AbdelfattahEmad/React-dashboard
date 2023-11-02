@@ -27,22 +27,16 @@
     .Content_Container{
         width: calc(100% - 250px);
         background-color: #f4f3f9;
-        height: 100vh;
         position: absolute;
         inset-inline-start: 250px;
         @include responsiveView {
         inset-inline-start: 0px;
         width: 100%;
         }
-
         @include Collapsed {
             inset-inline-start: 0px;
             width: 100%;
         }
-
-
-
-            
         .Topabar{
             background-color: #ffffff;
             padding: 0px 15px;
@@ -68,12 +62,31 @@
              overflow-y: auto;
 
         }
+        .Footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 8px;
+            background-color: #ffffff;
+            margin-top: 5px;
+            h5{
+                font-size: 25px;
 
-    
+            }
+
+
+            
+            .Social_media{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                p{
+                    margin-right: 10px;
+                }
+            }
+        }
 
     }
-    
-
     }
 
 

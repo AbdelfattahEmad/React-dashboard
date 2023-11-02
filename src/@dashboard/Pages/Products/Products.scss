@@ -5,8 +5,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 30px;
-    margin-top: 20px;
     .Card{
 
         @include responsiveView {
