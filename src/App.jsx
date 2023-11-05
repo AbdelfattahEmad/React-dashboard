@@ -18,6 +18,9 @@ import Signup from './@auth/pages/Signup/Signup';
 import { Suspense, useEffect } from 'react';
 import i18n from './i18n';
 import Main from './@dashboard/Pages/Main/Main';
+import Edit from './@dashboard/Pages/SubCategory/Edit/Edit';
+import Add from './@dashboard/Pages/SubCategory/Add_Section/Add';
+
 
 function App() {
 
@@ -63,6 +66,9 @@ function App() {
             <Route path="Main" element={<Main />} />
             <Route path="Categories" element={<Category />} />
             <Route path="SubCategories" element={<SubCategory />} />
+            <Route path="Edit" element={<Edit />} />
+            <Route path="Add" element={<Add />} />
+
             <Route path="Brands" element={<Brands />} />
             <Route path="Products" element={<Products />} />
             <Route path="Coupons" element={<Coupons />} />
@@ -71,6 +77,7 @@ function App() {
             <Route path="Users" element={<Users />} />
             <Route path="Reviews" element={<Reviews />} />
             <Route path="UserAdress" element={<Adresses />} />
+
           </Route>
         </Routes>
       </Suspense>
