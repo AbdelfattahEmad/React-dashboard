@@ -1,18 +1,33 @@
 .sub_Container{
     padding: 10px;
+    background: url("/src/assets/Images/dd.avif") center / cover;
+    height: 100vh;
+    background-color: #fff5;
+
+
+
+
 
     .Sub_Title{
-        margin-bottom: 15px;
-        background-color: #f6f6f6;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 0px;
+        padding: 8px 0px;
+        background-color: #eee;
+        opacity: 0.8;
+        border-radius: 5px;
+        &:hover{
+            opacity: 1.0;
+        }
+
+
 
     h4{
         font-weight: bold;
         font-size: 25px;
         font-family: auto;
+        margin-left: 8px;
     
     }
    .Link_Add{
@@ -24,9 +39,60 @@
         font-family: auto;
         list-style: none;
         text-decoration: none;
+        margin-right: 7px;
 
 
 
     }
     }
+
+
+    .Tabel{
+        margin: 4px;
+        text-align: center;
+        border-radius: 10px;
+        opacity: 0.8;
+        backdrop-filter:blur(7px);
+        box-shadow: 0 .4rem .8rem #fff4;
+        &:hover{
+            opacity: 1.0;
+        }
+
+
+
+        thead{
+            tr{
+                th{
+                    background-color: #eee;
+
+
+                }
+            }
+        }
+        .Body{
+            border-radius: 10px;
+           
+            tr{
+                td{
+                    padding: 1rem;
+                    &:hover{
+                        background-color: #eee;
+                    }
+
+                }
+                .Image{
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+    } 
+
+
+
 }

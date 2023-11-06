@@ -31,19 +31,6 @@ const DashboardLayout = () => {
           <Outlet />
         </div>
 
-        <footer className="Footer">
-          <h5>{t("Contact us")}</h5>
-
-          <div className="Social_media">
-            <p>face Book </p>
-            <p>Whatsaap </p>
-            <p>Twiiter </p>
-            <p>instgram</p>
-          </div>
-
-          
-        </footer>
-
         
       </div>
     </div>

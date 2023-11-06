@@ -2,22 +2,18 @@ import React from 'react'
 import "./Subcategory.scss"
 import { useTranslation } from 'react-i18next'
 import Table from 'react-bootstrap/Table';
-import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-
-
-
-
+import abdo from "../../../assets/Images/abdo.jpg"
+import aboda from "../../../assets/Images/aboda.jpg"
 
 const SubCategory = () => {
 
   const {t}=useTranslation()
 
   return (
-
     <div className='sub_Container'> 
 
     <div className='Sub_Title'>
@@ -33,299 +29,175 @@ const SubCategory = () => {
 
     </div>
 
+    <Table striped="columns" className='Tabel'>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Img</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Descreption</th>
+              <th>Quantaty</th>
+              <th>:</th>
+            </tr>
+          </thead>
+
+          <tbody className='Body'>
+
+          <tr>
+              <td>1</td>
+              <td className='Image'><img src={abdo} alt="aboda" /></td>
+              <td>Abdelfatah</td>
+              <td>75 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>5</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
+
+
+
+          </tr>
+
+          <tr>
+              <td>2</td>
+              <td className='Image'><img src={aboda} alt="aboda"/></td>
+              <td>Mohamed</td>
+              <td>75 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>5</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
+
+
+
+          </tr>
+
+
+
+          <tr>
+              <td>3</td>
+              <td className='Image'><img src={abdo} alt="aboda" /></td>
+              <td>Abdo</td>
+              <td>72 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>7</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
+
+
+
+          </tr>
+
+
+          <tr>
+              <td>1</td>
+              <td className='Image'><img src={abdo} alt="aboda" /></td>
+              <td>Abdelfatah</td>
+              <td>75 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>5</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
 
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
 
 
-<Table striped="columns">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Date</th>
-          <th>Administration number</th>
-          <th>State</th>
-          <th>Number of administrations</th>
-          <th>procedures</th>
-        </tr>
-      </thead>
-
-
-      <tbody>
-
-      <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
-
-
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-
-
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
-
-
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
-
-
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
-
-
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
-
-
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
 
+          </tr>
 
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+          <tr>
+              <td>1</td>
+              <td className='Image'><img src={abdo} alt="aboda" /></td>
+              <td>Abdelfatah</td>
+              <td>75 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>5</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
 
-          </td>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
 
-        </tr>
 
 
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
+          </tr>
 
 
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
+          <tr>
+              <td>1</td>
+              <td className='Image'><img src={abdo} alt="aboda" /></td>
+              <td>Abdelfatah</td>
+              <td>75 $</td>
+              <td>Lorem ipsum dolor,  Quos itaque nemo illo asperiores et!</td>
+              <td>5</td>
+              <td>          
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
+                  </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="Edit" to="Edit">ُEdit</Dropdown.Item>
+                    <Dropdown.Item >Delete</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </td>
 
-          </td>
 
-        </tr>
 
+          </tr>
 
-        <tr>
-          <td>{t("financial management")}</td>
-          <td>2 march</td>
-          <td> 1 </td>
-          <td>
-          <Form>
-              <Form.Check // prettier-ignore
-                type="switch"
-                id="custom-switch"
-              />
-          </Form>
-          </td>
-          <td>2</td>
 
 
-          <td>
-              
-          <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#405189",}} />
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="Edit">ُEdit</Dropdown.Item>
-        <Dropdown.Item >Delete</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-
-          </td>
-
-        </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-      </tbody>
+          </tbody>
     </Table>
+
 
     </div>
 
