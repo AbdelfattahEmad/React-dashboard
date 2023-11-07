@@ -17,7 +17,7 @@ const Orders = () => {
 
     <div className='Tabel_Header'>
 
-        <h1>Customer,s Orders</h1>
+        <h1>Customers Orders</h1>
 
 
         <div className='Tabel_Body'>

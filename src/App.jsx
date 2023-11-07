@@ -20,6 +20,8 @@ import i18n from './i18n';
 import Main from './@dashboard/Pages/Main/Main';
 import Edit from './@dashboard/Pages/SubCategory/Edit/Edit';
 import Add from './@dashboard/Pages/SubCategory/Add_Section/Add';
+import EditCategory from './@dashboard/Pages/Category/EditCategory/EditCategory';
+import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
 
 
 function App() {
@@ -61,10 +63,19 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
 
-          <Route path="/dashboard" element={<DashboardLayout />}>s
+          <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
             <Route path="Categories" element={<Category />} />
+            <Route path="EditCategory" element={<EditCategory />} />
+            <Route path="AddCategory" element={<AddCategory />} />
+
+           
+
+          
+
+
+
             <Route path="SubCategories" element={<SubCategory />} />
             <Route path="Edit" element={<Edit />} />
             <Route path="Add" element={<Add />} />
