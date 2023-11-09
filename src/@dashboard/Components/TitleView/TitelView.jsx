@@ -1,30 +1,19 @@
-import React from 'react'
+import {Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./TitelView.scss"
-import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
-
-const TitelView = ({name , pathText}) => {
-
-  return (
-    <>
 
 
-    <div className='Titles'>
 
-        <p>{name}</p>
+const TitleView = ({title , btn, pathText }) => {
+    return (
+       
+        <Container className="Titles">
 
-    <Link className='Link_Title' to={`${pathText}`} >
+                <div className="Adress">{title}</div>
 
-    <FontAwesomeIcon icon={faEye}/>
+                <Link to={`${pathText}`}  className="Link_Title" style={{textDecoration:'none'}}>{btn} </Link>
 
-    </Link>
-
-    </div>
-
-
-    </>
-  )
+        </Container>
+)
 }
-
-export default TitelView
+export default TitleView ;

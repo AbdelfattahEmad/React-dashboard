@@ -22,6 +22,8 @@ import Edit from './@dashboard/Pages/SubCategory/Edit/Edit';
 import Add from './@dashboard/Pages/SubCategory/Add_Section/Add';
 import EditCategory from './@dashboard/Pages/Category/EditCategory/EditCategory';
 import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
+import NoPageFound from './@dashboard/Components/NoPageFound';
+import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
 
 
 function App() {
@@ -63,22 +65,21 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
 
+
+
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
             <Route path="Categories" element={<Category />} />
             <Route path="EditCategory" element={<EditCategory />} />
             <Route path="AddCategory" element={<AddCategory />} />
-
-           
-
-          
-
-
-
             <Route path="SubCategories" element={<SubCategory />} />
             <Route path="Edit" element={<Edit />} />
             <Route path="Add" element={<Add />} />
+            <Route path="AddProduct" element={<AddProducts />} />
+
+            
+
 
             <Route path="Brands" element={<Brands />} />
             <Route path="Products" element={<Products />} />
@@ -88,8 +89,12 @@ function App() {
             <Route path="Users" element={<Users />} />
             <Route path="Reviews" element={<Reviews />} />
             <Route path="UserAdress" element={<Adresses />} />
+            <Route path="*" element={<NoPageFound />} />
+
 
           </Route>
+
+          
         </Routes>
       </Suspense>
     </>

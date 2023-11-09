@@ -1,29 +1,28 @@
 import React from 'react'
 import "./Brands.scss"
 import { useTranslation } from 'react-i18next'
-import BrandCard from '../../Components/Cards/BrandCard/BrandCard'
-import { Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import Tabel from '../../Components/Tabel/Tabel'
+import abdo from "../../../assets/Images/abdo.jpg"
+import TitleView from '../../Components/TitleView/TitelView'
 
 
 
-const Brands = () => {
+
+const Brands = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,SubCat  }) => {
 
   const {t}=useTranslation()
 
   return (
-    <>
 
     <div className="Brand_Container">
-    <BrandCard/>
-    <BrandCard/>
-    <BrandCard/>
-    <BrandCard/>
+
+
+    <TitleView title="Brand Page" btn="AddBrand" pathText="AddBrand" />
+
+        <Tabel id="1"  img={abdo} Descreption="Good"  Price="15" SubCat="Clothes " />
+
     </div>
 
-    </>
 
   )
 }

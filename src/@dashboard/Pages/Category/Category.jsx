@@ -26,170 +26,171 @@ const Category = () => {
      
     <div className='Tabel_Body'>
 
-    <Table striped="columns" className='Tabel'>
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Category</th>
-        <th>Dec</th>
-        <th>quantity</th>
-        <th>Price</th>
-        <th>Setting</th>
+        <Table striped="columns" className='Tabel'>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Category</th>
+            <th>Dec</th>
+            <th>quantity</th>
+            <th>Price</th>
+            <th>Setting</th>
 
-      </tr>
-    </thead>
+          </tr>
+        </thead>
 
-    <tbody>
-
-
-    <tr>
-        <td>5</td>
-        <td className='Image'><img src={abdo} alt="aboda" />ee</td>
-        <td>Abdelfatah</td>
-        <td>2 Dec 2023</td>
-        <td><strong>125$</strong></td>
-        <td>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
-              <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+        <tbody>
 
 
-        </td>
+        <tr>
+            <td>5</td>
+            <td className='Image'><img src={abdo} alt="aboda" />ee</td>
+            <td>Abdelfatah</td>
+            <td>2 Dec 2023</td>
+            <td><strong>125$</strong></td>
+            <td>
+
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
+                  <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
 
 
-
-    </tr>
+            </td>
 
 
 
-
-    <tr>
-        <td>5</td>
-        <td className='Image'><img src={abdo} alt="aboda" />ee</td>
-        <td>Abdelfatah</td>
-        <td>2 Dec 2023</td>
-        <td><strong>125$</strong></td>
-        <td>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
-              <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-
-        </td>
-    </tr>
-
-
-    <tr>
-        <td>3</td>
-        <td className='Image'><img src={abdo} alt="aboda" />ddd</td>
-        <td>Abdelfatah</td>
-        <td>2 Dec 2023</td>
-        <td><strong>125$</strong></td>
-        <td>
-
-<Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-<FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-
-
-        </td>
-    </tr>
-
-
-    <tr>
-        <td>4</td>
-        <td className='Image'><img src={abdo} alt="aboda" />ee</td>
-        <td>Abdelfatah</td>
-        <td>2 Dec 2023</td>
-        <td><strong>125$</strong></td>
-        <td>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
-              <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-
-        </td>
-
-
-
-    </tr>
-
-
-    <tr>
-        <td>5</td>
-        <td className='Image'><img src={abdo} alt="aboda" />ee</td>
-        <td>Abdelfatah</td>
-        <td>2 Dec 2023</td>
-        <td><strong>125$</strong></td>
-        <td>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
-              <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-
-        </td>
-
-
-
-    </tr>
+        </tr>
 
 
 
 
-    </tbody>
+        <tr>
+            <td>5</td>
+            <td className='Image'><img src={abdo} alt="aboda" />ee</td>
+            <td>Abdelfatah</td>
+            <td>2 Dec 2023</td>
+            <td><strong>125$</strong></td>
+            <td>
+
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
+                  <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
 
 
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>3</td>
+            <td className='Image'><img src={abdo} alt="aboda" />ddd</td>
+            <td>Abdelfatah</td>
+            <td>2 Dec 2023</td>
+            <td><strong>125$</strong></td>
+            <td>
+
+    <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+    <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>4</td>
+            <td className='Image'><img src={abdo} alt="aboda" />ee</td>
+            <td>Abdelfatah</td>
+            <td>2 Dec 2023</td>
+            <td><strong>125$</strong></td>
+            <td>
+
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
+                  <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
+
+            </td>
+
+
+
+        </tr>
+
+
+        <tr>
+            <td>5</td>
+            <td className='Image'><img src={abdo} alt="aboda" />ee</td>
+            <td>Abdelfatah</td>
+            <td>2 Dec 2023</td>
+            <td><strong>125$</strong></td>
+            <td>
+
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
+                  <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
+
+            </td>
+
+
+
+        </tr>
+
+
+
+
+        </tbody>
 
 
 
 
 
-    </Table>
-
-      </div>
 
 
+        </Table>
 
       </div>
+
+
+
+      </div>
+      
       </div>
 
 

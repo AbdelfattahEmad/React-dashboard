@@ -2,20 +2,8 @@
 
 
 .Product_Container{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    .Card{
-
-        @include responsiveView {
-            margin:4px;
-        }
-        @include xs {
-            display: block;
-        }
-    
-
-    }
+    background: url(../../../assets//Images/pr.jpg) center / cover ;
+    height: 100vh;
 
 
 }
