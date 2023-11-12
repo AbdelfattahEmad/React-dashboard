@@ -4,10 +4,10 @@ const AddProducts = () => {
   return (
    
     <div className='AddProduct_Head'>
+      
     <h2>Add Category</h2>
 
     <div className='inputs'>
-
 
       <input type='text' placeholder='Id' />
       <input type='text' placeholder='Name' />

@@ -1,0 +1,39 @@
+.Edit_Container{
+    height: 100vh;
+    background: url(../../../../assets/Images/ddr.jpg) center / cover;
+
+    .Forms{
+        margin: auto;
+        width: 45vw;
+        h2{
+            color:#fff;
+            padding: 10px;
+            margin-inline-start:  20px;
+            margin-bottom: 20px;
+        }
+
+        .input{
+            background-color: #fff7;
+            width: 600px;
+            margin-inline-start:  20px;
+            padding: 18px;
+            margin-top: 10px;
+            color: aliceblue;
+        }
+        .BtN{
+            background-color: #fff8;
+            padding: 7px 15px;
+            margin:8px 2px 5px 20px ;
+            border-color: #fff7;
+            &:hover{
+                background-color: #fff;
+                color: black;
+            }
+
+        }
+    
+
+    }
+
+
+}
