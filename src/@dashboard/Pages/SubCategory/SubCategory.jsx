@@ -15,11 +15,9 @@ const SubCategory = ({id ,img,Descreption ,quantity ,Price , title , btn, pathTe
 
     <div className='Tabel_Header'>
 
-      <TitleView title="SubCategory" btn="Add SubCategory"    />
+      <TitleView title="SubCategory" btn="Add SubCategory"  pathText="AddSubCategory" />
 
       <Tabel id="1"  img={abdo} Descreption="edeeded" quantity="5"  Price="15" SubCat="Clothes " />
-
-
 
 
       </div>

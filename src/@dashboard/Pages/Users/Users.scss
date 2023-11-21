@@ -1,0 +1,25 @@
+.Users_Container{
+    background: url(../../../assets/Images/dde.avif)center / cover;
+    height: 100vh;
+
+    .Title{
+        padding: 10px;
+        font-size: 35px;
+        font-weight: bold;
+        font-family: auto;
+    
+    
+    }
+
+    .user_info{
+        padding: 15px;
+        background-color: #fff5;
+        margin: 10px;
+        img{
+            width: 35px;
+            border-radius: 50px
+        }
+
+
+    }
+}

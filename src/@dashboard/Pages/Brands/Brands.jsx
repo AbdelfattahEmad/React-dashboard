@@ -19,7 +19,7 @@ const Brands = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,Su
 
     <TitleView title="Brand Page" btn="AddBrand" pathText="AddBrand" />
 
-        <Tabel id="1"  img={abdo} Descreption="Good"  Price="15" SubCat="Clothes " />
+    <Tabel id="1"  img={abdo} Descreption="Good"  Price="15" SubCat="Clothes" />
 
     </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Category.scss"
 import { useTranslation } from 'react-i18next'
 import Table from 'react-bootstrap/Table';
@@ -7,11 +7,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { getCategoryAction } from '../../../Redux/Actions/CategoryAction';
+
+
 
 
 const Category = () => {
-
   const {t}=useTranslation()
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+
+    dispatch(getCategoryAction())
+
+  },[])
+
+  const CategoryData = useSelector((state)=>state.CategoryReducer.category)
+
+
+  const Loading = useSelector((state)=>state.CategoryReducer.loading)
+
+
+  console.log(CategoryData)
+
+
+
 
   return (
 

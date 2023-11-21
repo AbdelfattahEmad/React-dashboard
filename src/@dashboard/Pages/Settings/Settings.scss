@@ -1,0 +1,36 @@
+.Settings{
+    background-color: white;
+
+    h2{
+        padding: 15px;
+        font-size: 40px;
+        font-family: monospace;
+        font-weight: bold;
+    
+    }
+
+    .options{
+        padding: 15px;
+        cursor: pointer;
+        font-weight: 400;
+
+        :hover{
+            border: 1px solid #eee;
+            padding: 10px 35px;
+            background-color: #eee;
+            border-radius: 10px;
+
+        }
+
+
+        .link{
+            margin-inline-start: 5px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+
+        }
+    }
+
+
+}

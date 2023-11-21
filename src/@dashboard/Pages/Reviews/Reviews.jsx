@@ -8,12 +8,12 @@ const Reviews = () => {
 
   return (
     <div className='Container_review'>
+
       <h2> {t("Reviews")}</h2 >
 
 
       <div className='inputs'>
 
-        <img src='' alt='Add img' />
 
       <input  className='input' type='textarea'  placeholder='The Name' /> 
 
@@ -46,22 +46,7 @@ const Reviews = () => {
 
 </div>
 
-<div className='person_info'>
 
-  <img src={abdo} alt='' />
-
-    <h5> mr mohmed </h5>
-    <p> my opinii is this website is very wonderful one </p>
-
-
-</div>
-
-
-
-
-
-    
-    
     </div>
 
   )

@@ -18,11 +18,10 @@ import Signup from './@auth/pages/Signup/Signup';
 import { Suspense, useEffect } from 'react';
 import i18n from './i18n';
 import Main from './@dashboard/Pages/Main/Main';
-import Edit from './@dashboard/Pages/SubCategory/Edit/Edit';
-import Add from './@dashboard/Pages/SubCategory/Add_Section/Add';
+import EditSubCategory from './@dashboard/Pages/SubCategory/EditSubCategory/EditSubCategory';
+import AddSubCategory from './@dashboard/Pages/SubCategory/AddSubCategory/AddSubCategory';
 import EditCategory from './@dashboard/Pages/Category/EditCategory/EditCategory';
 import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
-import NoPageFound from './@dashboard/Components/NoPageFound';
 import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
 
 
@@ -64,9 +63,7 @@ function App() {
             <Route index element={<Auth />} />
             <Route path="signup" element={<Signup />} />
           </Route>
-
-
-
+          
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
@@ -74,13 +71,9 @@ function App() {
             <Route path="EditCategory" element={<EditCategory />} />
             <Route path="AddCategory" element={<AddCategory />} />
             <Route path="SubCategories" element={<SubCategory />} />
-            <Route path="Edit" element={<Edit />} />
-            <Route path="Add" element={<Add />} />
+            <Route path="Edit" element={<EditSubCategory />} />
+            <Route path="AddSubCategory" element={<AddSubCategory />} />
             <Route path="AddProduct" element={<AddProducts />} />
-
-            
-
-
             <Route path="Brands" element={<Brands />} />
             <Route path="Products" element={<Products />} />
             <Route path="Coupons" element={<Coupons />} />
@@ -89,9 +82,6 @@ function App() {
             <Route path="Users" element={<Users />} />
             <Route path="Reviews" element={<Reviews />} />
             <Route path="UserAdress" element={<Adresses />} />
-            <Route path="*" element={<NoPageFound />} />
-
-
           </Route>
 
           

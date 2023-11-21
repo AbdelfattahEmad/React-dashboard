@@ -11,10 +11,11 @@ import { faYelp } from "@fortawesome/free-brands-svg-icons";
 import NotifictionTap from "../NotictionsTap/Notifiction";
 import i18n from "../../../i18n";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import i18next from 'i18next';
-import { useDispatch } from "react-redux";
-import {uiActions} from "../../../Redux/store/slices/ui-slice"
+import uiActions from "../../../Redux/slices/ui-slice";
+import { useDispatch } from 'react-redux'
+
 
 
 
@@ -42,9 +43,11 @@ const Topbar = () => {
       function toggleMenu(){
     
         dispatch(uiActions.toggleSidebar())
+        
       }
   
     {/* open sidebar */}
+    
   return (
 
     <div className="Topbar_Container">
@@ -212,6 +215,8 @@ const Topbar = () => {
 
     
     </div>
+
+
   );
 
 
