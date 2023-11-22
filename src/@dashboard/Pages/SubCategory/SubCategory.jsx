@@ -1,37 +1,86 @@
-import React from 'react'
-import "./Subcategory.scss"
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import './Subcategory.scss';
+import { useTranslation } from 'react-i18next';
 import TitleView from '../../Components/TitleView/TitelView';
 import Tabel from '../../Components/Tabel/Tabel';
-import abdo from "../../../assets/Images/abdo.jpg"
+import abdo from '../../../assets/Images/abdo.jpg';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
+const fakeData = [
+  {
+    id: 1,
+    img: '',
+    Descreption: 'dsdsdsdsdsdsdsdsd',
+    quantity: 'dsdsdsdsdsd',
+    Price: '$121',
+    SubCategory: '2wwqwq',
+  },
+];
 
-const SubCategory = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,SubCat}) => {
-
-  const {t}=useTranslation()
+const SubCategory = () => {
+  const { t } = useTranslation();
 
   return (
-    <div className='Sub_Container'>
+    <div className="Sub_Container">
+      <div className="Tabel_Header">
+        <TitleView
+          title="SubCategory"
+          btn="Add SubCategory"
+          pathText="AddSubCategory"
+        />
 
-    <div className='Tabel_Header'>
+        <Tabel>
+          <Tabel.tabelHead>
+            <tr>
+              <th>id</th>
+              <th>img</th>
+              <th>Descreption</th>
+              <th>quantity</th>
+              <th>Price</th>
+              <th>SubCategory</th>
+              <th>Setting</th>
+            </tr>
+          </Tabel.tabelHead>
 
-      <TitleView title="SubCategory" btn="Add SubCategory"  pathText="AddSubCategory" />
+          <Tabel.tabelebody>
+            {fakeData &&
+              fakeData.map((item) => {
+                return (
+                  <Tabel.tabelRow key={item?.id}>
+                    <td>{item?.id}</td>
+                    <td>{item?.img}</td>
+                    <td>{item?.Descreption}</td>
+                    <td>{item?.quantity}</td>
+                    <td>{item?.price}</td>
+                    <td>{item?.SubCategory}</td>
+                    <td>
+                      <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                          <FontAwesomeIcon
+                            icon={faEllipsisVertical}
+                            style={{ color: '#27282b' }}
+                          />
+                        </Dropdown.Toggle>
 
-      <Tabel id="1"  img={abdo} Descreption="edeeded" quantity="5"  Price="15" SubCat="Clothes " />
-
-
+                        <Dropdown.Menu>
+                          <Link to={'Edit/' + item?.id}>Edit</Link>
+                          <Dropdown.Item href="DeleteCategory">
+                            Delete
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </Tabel.tabelRow>
+                );
+              })}
+          </Tabel.tabelebody>
+        </Tabel>
       </div>
+    </div>
+  );
+};
 
-
-
-
-
-      
-      </div>
-
-
-
-  )
-}
-
-export default SubCategory
+export default SubCategory;

@@ -1,74 +1,27 @@
-import React from 'react'
-import Table from 'react-bootstrap/Table';
-import Dropdown from 'react-bootstrap/Dropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
-import "./Tabel.scss"
-import SubCategory from '../../Pages/SubCategory/SubCategory';
+import './Tabel.scss';
 
-
-
-
-const Tabel = ({id ,img,Descreption ,quantity ,Price,SubCat }) => {
+const Tabel = ({ children }) => {
   return (
-
-    <div className='Tabel_Container'>
-      
-    <Table striped="columns" className='Tabel'>
-      
-    <thead>
-
-      <tr>
-        <th>id</th>
-        <th>img</th>
-        <th>Descreption</th>
-        <th>quantity</th>
-        <th>Price</th>
-        <th>SubCategory</th>
-        <th>Setting</th>
-      </tr>
-    </thead>
-
-
-    <tbody>
-
-    <tr>
-        <td>{id}</td>
-        <td> {img}</td>
-        <td>{Descreption}</td>
-        <td>{quantity}</td>
-        <td>{Price}</td>
-        <td>{SubCat}</td>
-
-
-        <td>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FontAwesomeIcon icon={faEllipsisVertical} style={{color: "#27282b",}} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="EditCategory">Edit</Dropdown.Item>
-              <Dropdown.Item href="DeleteCategory">Delete</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-
-        </td>
-
-
-
-    </tr>
-
-
-
-    </tbody>
-
-    </Table>
+    <div className="Tabel_Container">
+      <table className="Tabel">{children}</table>
     </div>
+  );
+};
 
-  )
-}
+const tableHead = ({ children }) => {
+  return <thead>{children}</thead>;
+};
 
-export default Tabel
+const tableBody = ({ children }) => {
+  return <tbody>{children}</tbody>;
+};
+
+const tableRow = ({ children }) => {
+  return <tr>{children}</tr>;
+};
+
+Tabel.tabelHead = tableHead;
+Tabel.tabelebody = tableBody;
+Tabel.tabelRow = tableRow;
+
+export default Tabel;

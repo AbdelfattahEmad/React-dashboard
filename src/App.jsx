@@ -24,35 +24,27 @@ import EditCategory from './@dashboard/Pages/Category/EditCategory/EditCategory'
 import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
 import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
 
-
 function App() {
+  const detectLangue = () => {
+    const lang = localStorage.getItem('i18nextLng');
 
-  const detectLangue =()=>{
+    if (lang === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+      document.documentElement.setAttribute('lang', 'ar');
+      localStorage.setItem('i18nextLng', 'ar');
+      i18n.changeLanguage('ar');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+      document.documentElement.setAttribute('lang', 'en');
+      localStorage.setItem('i18nextLng', 'en');
 
-    const lang = localStorage.getItem("i18nextLng") 
-
-    if(lang === "ar"){
-
-      document.documentElement.setAttribute("dir", "rtl")
-      document.documentElement.setAttribute("lang", "ar")
-      localStorage.setItem("i18nextLng" , "ar" )
-      i18n.changeLanguage("ar")
-
-    }else{
-
-      document.documentElement.setAttribute("dir", "ltr")
-      document.documentElement.setAttribute("lang", "en")
-      localStorage.setItem("i18nextLng" , "en" )
-
-      i18n.changeLanguage("en")
-
+      i18n.changeLanguage('en');
     }
+  };
 
-  }
-
-  useEffect(()=>{
-    detectLangue()
-  },[])
+  useEffect(() => {
+    detectLangue();
+  }, []);
   return (
     <>
       <Suspense>
@@ -63,25 +55,23 @@ function App() {
             <Route index element={<Auth />} />
             <Route path="signup" element={<Signup />} />
           </Route>
-          
+
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
 
-
             <Route path="Categories">
-              <Route path="" element={<Category />}  />
+              <Route path="" element={<Category />} />
               <Route path="AddCategory" element={<AddCategory />} />
-              <Route path="EditCategory" element={<EditCategory />} />
+              <Route path="EditCategory/:id" element={<EditCategory />} />
             </Route>
 
+            <Route path="SubCategories">
+              <Route path="" element={<SubCategory />} />
+              <Route path="Edit/:id" element={<EditSubCategory />} />
+              <Route path="AddSubCategory" element={<AddSubCategory />} />
+            </Route>
 
-
-            
-
-            <Route path="SubCategories" element={<SubCategory />} />
-            <Route path="Edit" element={<EditSubCategory />} />
-            <Route path="AddSubCategory" element={<AddSubCategory />} />
             <Route path="AddProduct" element={<AddProducts />} />
             <Route path="Brands" element={<Brands />} />
             <Route path="Products" element={<Products />} />
@@ -92,8 +82,6 @@ function App() {
             <Route path="Reviews" element={<Reviews />} />
             <Route path="UserAdress" element={<Adresses />} />
           </Route>
-
-          
         </Routes>
       </Suspense>
     </>
