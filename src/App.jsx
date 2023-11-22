@@ -67,9 +67,18 @@ function App() {
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
-            <Route path="Categories" element={<Category />} />
-            <Route path="EditCategory" element={<EditCategory />} />
-            <Route path="AddCategory" element={<AddCategory />} />
+
+
+            <Route path="Categories">
+              <Route path="" element={<Category />}  />
+              <Route path="AddCategory" element={<AddCategory />} />
+              <Route path="EditCategory" element={<EditCategory />} />
+            </Route>
+
+
+
+            
+
             <Route path="SubCategories" element={<SubCategory />} />
             <Route path="Edit" element={<EditSubCategory />} />
             <Route path="AddSubCategory" element={<AddSubCategory />} />

@@ -6,9 +6,10 @@ import baseUrl from "../Api/basUrl"
 export const getCategoryAction =()=>  async(dispatch) => {
     try {
        const response = await baseUrl.get("categories");
+
        dispatch({
             type : GET_ALL_CATEGORY ,
-            payload : response.data,
+            payload : response.data.data,
             error: false
         })
     } catch(err) {

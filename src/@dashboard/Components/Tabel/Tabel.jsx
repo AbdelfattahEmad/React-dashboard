@@ -15,7 +15,7 @@ const Tabel = ({id ,img,Descreption ,quantity ,Price,SubCat }) => {
     <div className='Tabel_Container'>
       
     <Table striped="columns" className='Tabel'>
-
+      
     <thead>
 
       <tr>
@@ -26,13 +26,11 @@ const Tabel = ({id ,img,Descreption ,quantity ,Price,SubCat }) => {
         <th>Price</th>
         <th>SubCategory</th>
         <th>Setting</th>
-
       </tr>
-
     </thead>
 
-    <tbody>
 
+    <tbody>
 
     <tr>
         <td>{id}</td>
