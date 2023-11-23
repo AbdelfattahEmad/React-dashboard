@@ -3,7 +3,9 @@ import './Tabel.scss';
 const Tabel = ({ children }) => {
   return (
     <div className="Tabel_Container">
+
       <table className="Tabel">{children}</table>
+      
     </div>
   );
 };

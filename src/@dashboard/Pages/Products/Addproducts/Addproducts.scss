@@ -1,12 +1,9 @@
 .AddProduct_Head{
-    background:url(../../../../assets/Images/ddr.jpg)center /cover;
     height: 100vh;
     
-
     h2{
         font-size: 40px;
         font-family: fantasy;
-        color: #fff;
         margin-inline-start: 20px;
         margin-top: 10px;
         margin-bottom: 25x;
@@ -16,13 +13,11 @@
         margin-inline-start: 20px;
         border: 1px solid #eee;
         padding: 30px;
-        background-color: #fff2;
+        background-color: #405189;
         width: 500px;
         border-radius: 20px;
         margin: auto;
         box-shadow: 0 0px 1px 0px #fff8;
-
-    
 
 
         input{
@@ -56,7 +51,7 @@
             
             
             &:hover{
-                background-color:#0d6efd;
+                background-color: #405189;
                 color: #eee;
             }
         

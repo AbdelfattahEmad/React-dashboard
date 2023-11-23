@@ -4,19 +4,21 @@ import { Link } from 'react-router-dom';
 import Tabel from '../../Components/Tabel/Tabel';
 import Spinner from 'react-bootstrap/Spinner';
 import CategoryHook from "../../../Redux/Hooks/CategoryHooks"
+import Dropdown from 'react-bootstrap/Dropdown';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 
 
 
 
-const Category = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,SubCat}) => {
+
+
+const Category = ({ children }) => {
 
   const {t}=useTranslation()
 
   const {CategoryData ,Loading }= CategoryHook()
-
-
-
 
   return (
 
@@ -27,7 +29,6 @@ const Category = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,
       <div className='Title'>
       <h1>Category</h1>
       
-      
       <Link to="AddCategory" className='Btn'>Add Category</Link>
 
       </div>
@@ -36,20 +37,69 @@ const Category = ({id ,img,Descreption ,quantity ,Price , title , btn, pathText,
      
     <div className='Tabel_Body'>
 
-      {
 
-      Loading ===false ? (
 
-        CategoryData ? CategoryData.map((catItem , index)=>{
+
+          <Tabel>
+
+
+            <Tabel.tabelHead>
+                <tr>
+                <th>id</th>
+                <th>img</th>
+                <th>Descreption</th>
+                <th>quantity</th>
+                <th>Price</th>
+                <th>SubCategory</th>
+                <th>Setting</th>
+                </tr>
+            </Tabel.tabelHead>
+            {
+        Loading === false ? (
+
+         CategoryData ? CategoryData.map((item)=>{
+
           return(
-            <Tabel id={catItem.id} img={catItem.image} Descreption={catItem.slug}  quantity={catItem.slug} Price="15" SubCat="Clothes" />)
+            <Tabel.tabelebody>
+              <Tabel.tabelRow key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.image}</td>
+                <td>{item.slug}</td>
+                <td>{item.price}</td>
+                <td>{item.SubCategory}</td>
+                <td>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      <FontAwesomeIcon
+                        icon={faEllipsisVertical}
+                        style={{ color: '#27282b' }}
+                      />
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Link to="EditCategory" >Edit</Link>
+                      <Dropdown.Item href="DeleteCategory">
+                        Delete
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </td>
+              </Tabel.tabelRow>
+            </Tabel.tabelebody>
+
+
+            
+            )
         }): <h1> No Categores</h1>
 
       ) :<Spinner animation="border" variant="primary" />
 
 
       
-      }
+    }
+              </Tabel>
+
 
 
 

@@ -1,16 +1,12 @@
 import React from 'react'
-import "./AddSubCategory.scss"
+import "./AddBrand.scss"
 
-
-const AddSubCategory= () => {
+const AddBrand = () => {
   return (
-    <div className='AddSubCategory_Head'>
 
-      <h2>Add SubCategory</h2>
-
+    <div className='AddBrand_Head'>
+      <h2>Add Brand</h2>
       <div className='inputs'>
-
-
         <input type='text' placeholder='Id' />
         <input type='text' placeholder='Name' />
         <input type='text' placeholder='Image' />
@@ -18,12 +14,11 @@ const AddSubCategory= () => {
         <input type='number' placeholder='Quantity' />
         <input type='text' placeholder='Price' />
         <button className='Btn_sub'>Submit</button>
-
-
       </div>
 
     </div>
+    
   )
 }
 
-export default AddSubCategory
+export default AddBrand

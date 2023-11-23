@@ -38,9 +38,10 @@ const Topbar = () => {
       {/* end Translation */}
 
       {/* open side bar */}
+      
       const dispatch = useDispatch();
 
-      function toggleMenu(){
+     const toggleMenu =()=>{
     
         dispatch(uiActions.toggleSidebar())
         

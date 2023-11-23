@@ -23,6 +23,8 @@ import AddSubCategory from './@dashboard/Pages/SubCategory/AddSubCategory/AddSub
 import EditCategory from './@dashboard/Pages/Category/EditCategory/EditCategory';
 import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
 import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
+import EditProducts from './@dashboard/Pages/Products/EditProducts/EditProducts';
+import AddBrand from './@dashboard/Pages/Brands/AddBrand/AddBrand';
 
 function App() {
   const detectLangue = () => {
@@ -63,18 +65,31 @@ function App() {
             <Route path="Categories">
               <Route path="" element={<Category />} />
               <Route path="AddCategory" element={<AddCategory />} />
-              <Route path="EditCategory/:id" element={<EditCategory />} />
+              <Route path="EditCategory" element={<EditCategory />} />
             </Route>
 
             <Route path="SubCategories">
               <Route path="" element={<SubCategory />} />
-              <Route path="Edit/:id" element={<EditSubCategory />} />
               <Route path="AddSubCategory" element={<AddSubCategory />} />
+              <Route path="Edit/:id" element={<EditSubCategory />} />
             </Route>
 
-            <Route path="AddProduct" element={<AddProducts />} />
-            <Route path="Brands" element={<Brands />} />
-            <Route path="Products" element={<Products />} />
+
+
+            <Route path="Products" > 
+              <Route path="" element={<Products />} />
+              <Route path="AddProduct" element={<AddProducts />} />
+              <Route path="Edit/:id" element={<EditProducts />} />
+            </Route>
+
+
+
+
+            <Route path="Brands">
+              <Route path="" element={<Brands />} />
+              <Route  path='AddBrand' element={<AddBrand />}/>
+            </Route>
+
             <Route path="Coupons" element={<Coupons />} />
             <Route path="Orders" element={<Orders />} />
             <Route path="Settings" element={<Settings />} />

@@ -1,11 +1,12 @@
 import React from 'react'
+import "./Addproducts.scss"
 
 const AddProducts = () => {
   return (
    
     <div className='AddProduct_Head'>
       
-    <h2>Add Category</h2>
+    <h2>Add Products</h2>
 
     <div className='inputs'>
 

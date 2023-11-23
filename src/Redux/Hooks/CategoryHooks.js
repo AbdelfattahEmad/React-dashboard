@@ -19,7 +19,6 @@ const CategoryData = useSelector((state)=>state.CategoryReducer.category)
 
 
 const Loading = useSelector((state)=>state.CategoryReducer.loading)
-console.log(CategoryData)
 
 
 return{CategoryData ,Loading}
