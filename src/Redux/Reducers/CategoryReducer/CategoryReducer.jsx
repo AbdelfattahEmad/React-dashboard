@@ -1,9 +1,11 @@
 
-import { GET_ALL_CATEGORY  , GET_ERROR} from "../../Types/Types"
+import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY} from "../../Types/Types"
 
 
  const inital = {
-    category : [] , 
+
+    category : [] ,
+    createCategory :[], 
     loading : true , 
 
 
@@ -18,6 +20,12 @@ import { GET_ALL_CATEGORY  , GET_ERROR} from "../../Types/Types"
                 loading :false,
                 error:action.error
         } 
+        case CREATE_CATEGORY:
+        return {
+             createCategory: action.payload , 
+             loading :false,
+            error:action.error
+    } 
         case  GET_ERROR : return {
             loading :true,
             category :action.payload

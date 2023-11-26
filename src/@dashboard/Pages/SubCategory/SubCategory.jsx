@@ -20,6 +20,7 @@ const SubCategory = () => {
 
   return (
     <div className="Sub_Container">
+
         <div className="Tabel_Header">
           <TitleView
             title="SubCategory"
@@ -79,6 +80,7 @@ const SubCategory = () => {
         }
         </Tabel>
         </div>
+        
     </div>
   );
 };

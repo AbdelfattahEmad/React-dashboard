@@ -1,6 +1,8 @@
 
-import { GET_ALL_CATEGORY, GET_ERROR }  from "../Types/Types"
+import { GET_ALL_CATEGORY, GET_ERROR ,CREATE_CATEGORY  }  from "../Types/Types"
 import baseUrl from "../Api/basUrl"
+import { insertDataWithImg } from "../Hooks/DataHooks/DataHooks";
+
 
 
 export const getCategoryAction =()=>  async(dispatch) => {
@@ -9,6 +11,27 @@ export const getCategoryAction =()=>  async(dispatch) => {
 
        dispatch({
             type : GET_ALL_CATEGORY ,
+            payload : response.data.data,
+            loading : true,
+            error: false
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
+
+
+export const CreateCategoryAction =(formData)=> async(dispatch) => {
+    try {
+       const response = await insertDataWithImg("categories" , formData);
+
+       dispatch({
+            type :CREATE_CATEGORY ,
             payload : response.data.data,
             error: false
         })
@@ -20,4 +43,6 @@ export const getCategoryAction =()=>  async(dispatch) => {
         })
     }
 }
+
+
 

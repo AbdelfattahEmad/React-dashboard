@@ -48,8 +48,6 @@ const Category = ({ children }) => {
                 <th>id</th>
                 <th>img</th>
                 <th>Descreption</th>
-                <th>quantity</th>
-                <th>Price</th>
                 <th>SubCategory</th>
                 <th>Setting</th>
                 </tr>
@@ -62,12 +60,10 @@ const Category = ({ children }) => {
           return(
             <Tabel.tabelebody>
               <Tabel.tabelRow key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
+                <td>{item._id}</td>
                 <td>{item.image}</td>
-                <td>{item.slug}</td>
-                <td>{item.price}</td>
-                <td>{item.SubCategory}</td>
+                <td>{item.name}</td>
+                <td>{item.createdAt}</td>
                 <td>
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
