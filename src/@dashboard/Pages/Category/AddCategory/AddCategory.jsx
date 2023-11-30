@@ -1,26 +1,49 @@
-import React, { useState  } from 'react'
-import { useDispatch} from 'react-redux'
+import React, { useEffect, useState  } from 'react'
+import { useDispatch, useSelector} from 'react-redux'
 import "./AddCategory.scss"
 import empty from "../../../../assets/Images/empty.jpg"
 import { CreateCategoryAction } from '../../../../Redux/Actions/CategoryAction'
+import Spinner from 'react-bootstrap/Spinner';
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
 
 
 const AddCategory = () => {
+
+  const notify = (msg, type) => {
+        if(type === "warn")
+            toast.warn(msg)
+        else if(type === "success")
+            toast.success(msg)
+        else if(type === "error")
+            toast.error(msg)
+
+  };
+  
+
 
     const [img,setImg]=useState(empty)
 
     const [name,setName]=useState("")
 
-    const [id,setId]=useState("")
+
+    const [loading , setLoading] =useState(true)
 
     const [selectedFile,SetselectedFile]=useState(null)
+
+    const [ispress,SetIspress]=useState(false)
 
     const dispatch = useDispatch()
 
 
 
-    //loading
-    const Loading = useSelector((state)=>state.CategoryReducer.loading)
+    const res = useSelector((state)=>state.CategoryReducer.createCategory)
 
 
     //image change 
@@ -37,25 +60,56 @@ const AddCategory = () => {
         setName(e.target.value)
     }
 
-    //id change
-    const OnChangeId =(e)=>{
-      setId(e.target.value)
-    }
 
 
     //Button Submit
-    const HandelSubmit=(e)=>{
+    const HandelSubmit= async (e)=>{
       e.preventDefault();
       const formData =new FormData()
+
+      if(name === "" ||selectedFile === null ){
+        notify("please Complete The Data" , "warn")
+        return ;
+      }
 
       formData.append("name" , name)
       formData.append("image" , selectedFile)
 
-
-      dispatch(CreateCategoryAction(formData))
-
+      setLoading(true)
+      SetIspress(true)
+       await dispatch(CreateCategoryAction(formData))
+       setLoading(false)
 
     }
+
+    useEffect(()=>{
+
+      if(loading === false){
+        setImg(empty)
+        setName("")
+        SetselectedFile(null)
+        setLoading(false)
+
+        setTimeout(()=>{
+          SetIspress(false)
+        },2000)
+
+
+        if(res === 201) {
+
+          notify("Mission sucssufuly","success");
+
+        }else{
+          notify("Error","error")
+        }
+
+      }
+    
+
+    },[loading])
+
+
+
 
 
   return (
@@ -85,12 +139,17 @@ const AddCategory = () => {
 
           </div>
 
-          <input type='text' placeholder='id' value={id} onChange={OnChangeId} />
           <input type='text' placeholder='Name' value={name} onChange={OnChangeName} />
-
           <button className='Btn_sub' onClick={HandelSubmit}>Submit</button>
         </div>
 
+        {
+          ispress ? loading ? <Spinner animation="border" role="status"></Spinner>:
+          <span style={{textAlign:"center", fontSize:"30px",padding:"5px" }}>Done 
+            <FontAwesomeIcon icon={faCheck} style={{color: "#3bf109",}} /> </span>:null
+
+        }
+        <ToastContainer />
     </div>
   )
 }

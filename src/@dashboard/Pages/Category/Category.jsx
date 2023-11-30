@@ -4,111 +4,118 @@ import { Link } from 'react-router-dom';
 import Tabel from '../../Components/Tabel/Tabel';
 import Spinner from 'react-bootstrap/Spinner';
 import CategoryHook from "../../../Redux/Hooks/CategoryHooks"
-import Dropdown from 'react-bootstrap/Dropdown';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import { useRef, useState} from 'react';
+import { useDispatch } from 'react-redux'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+
+const Category = () => {
 
 
 
 
+  const {CategoryData ,Loading ,show,setShow ,handleClose ,handleShow ,setId ,handelDelete ,deletedId }= CategoryHook()
 
-
-
-const Category = ({ children }) => {
-
-  const {t}=useTranslation()
-
-  const {CategoryData ,Loading }= CategoryHook()
 
   return (
 
-    <div className='Category_Container'>
+    <> 
+          <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+          <Modal.Title>Delete operation!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>are sure of the deleting process ?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handelDelete}>
+           Confirm 
+          </Button>
+        </Modal.Footer>
+          </Modal>
 
-    <div className='Tabel_Header'>
 
-      <div className='Title'>
-      <h1>Category</h1>
+
+      <div className='Category_Container'>
+
+
+      <div className='Tabel_Header'>
+
+        <div className='Title'>
+        <h1>Category</h1>
+        
+        <Link to="AddCategory" className='Btn'>Add Category</Link>
+
+        </div>
+
+        
       
-      <Link to="AddCategory" className='Btn'>Add Category</Link>
-
-      </div>
-
-      
-     
-    <div className='Tabel_Body'>
+      <div className='Tabel_Body'>
+            <Tabel>
 
 
+              <Tabel.tabelHead>
+                  <tr>
+                  <th>id</th>
+                  <th>name</th>
+                  <th>img</th>
+                  <th>SubCategory</th>
+                  <th>Setting</th>
+                  </tr>
+              </Tabel.tabelHead>
 
 
-          <Tabel>
+              <Tabel.tabelebody>
+
+  {
+          Loading === false ? (
+
+          CategoryData ? CategoryData.map((item)=>{
+
+            return(
+
+              <Tabel.tabelRow key={item._id}>
+
+              <td>{item._id}</td>
+              <td>{item.name}</td>
+              <td>{item.image}</td>
+              <td>{item.createdAt}</td>
+
+              <td>
+              <Link className="Table_Btn" to={`EditCategory/${item._id}`} >Edit</Link>
+
+              <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}} >Delete</button>
+
+              </td>
+            </Tabel.tabelRow>
+
+              )
+          }): <h1> No Categores</h1>
+
+        ) :<Spinner animation="border" variant="primary" />
 
 
-            <Tabel.tabelHead>
-                <tr>
-                <th>id</th>
-                <th>img</th>
-                <th>Descreption</th>
-                <th>SubCategory</th>
-                <th>Setting</th>
-                </tr>
-            </Tabel.tabelHead>
-            {
-        Loading === false ? (
-
-         CategoryData ? CategoryData.map((item)=>{
-
-          return(
-            <Tabel.tabelebody>
-              <Tabel.tabelRow key={item.id}>
-                <td>{item._id}</td>
-                <td>{item.image}</td>
-                <td>{item.name}</td>
-                <td>{item.createdAt}</td>
-                <td>
-                  <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      <FontAwesomeIcon
-                        icon={faEllipsisVertical}
-                        style={{ color: '#27282b' }}
-                      />
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Link to="EditCategory" >Edit</Link>
-                      <Dropdown.Item href="DeleteCategory">
-                        Delete
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </td>
-              </Tabel.tabelRow>
-            </Tabel.tabelebody>
+        
+      }
 
 
-            
-            )
-        }): <h1> No Categores</h1>
-
-      ) :<Spinner animation="border" variant="primary" />
+              </Tabel.tabelebody>
 
 
-      
-    }
-              </Tabel>
+            </Tabel>
+
+        </div>
 
 
 
+        </div>
+        
+        </div>
 
-
-      </div>
-
-
-
-      </div>
-      
-      </div>
-
-
+      </>
 
   )
 }

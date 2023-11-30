@@ -1,37 +1,39 @@
 .Edit_Container{
     height: 100vh;
+    margin-top: 30px;
 
     .Forms{
         margin: auto;
         width: 45vw;
-        h2{
-            color: black;
+        background-color: #405189;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0px 1px 0px #fff;
+
+
+
+        h5{
             padding: 10px;
             margin-inline-start:  20px;
             margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #fff;
         }
 
         .input{
-            background-color: #fff7;
             width: 600px;
             margin-inline-start:  20px;
             padding: 18px;
             margin-top: 10px;
-            color: aliceblue;
         }
         .BtN{
-            background-color: #fff8;
+            background-color: #464644;
             padding: 7px 15px;
             margin:8px 2px 5px 20px ;
             border-color: #fff7;
-            &:hover{
-                background-color: #fff;
-                color: black;
-            }
-
+            margin-top: 20px;
         }
-    
-
     }
 
 

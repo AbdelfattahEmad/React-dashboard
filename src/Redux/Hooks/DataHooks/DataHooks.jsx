@@ -35,7 +35,6 @@ const put = async(Url , params) => {
     return res
 }
 
-
 const getDataToken = async(url , params)=> {
     const config = {
         headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
@@ -46,6 +45,8 @@ const getDataToken = async(url , params)=> {
 }
 
 
+
+
 //delete
 const DeletDataToken = async(url , params)=> {
     const config = {
@@ -54,6 +55,18 @@ const DeletDataToken = async(url , params)=> {
     const res = await baseUrl.delete(url , config)
     return res.data
 }
+
+
+const DeleteData = async(Url , params) => {
+
+    const res = await baseUrl.delete(Url,params)
+    console.log(res)
+
+
+    return res.data
+    
+}
+
 
 
 
@@ -69,4 +82,4 @@ const insertUpdateData = async(url , params)=>{
 
 
 
-export {insertDataWithImg ,insertData , getData , put , getDataToken , DeletDataToken , insertUpdateData }  
+export {insertDataWithImg ,insertData , getData , put , getDataToken , DeletDataToken , insertUpdateData , DeleteData  }  

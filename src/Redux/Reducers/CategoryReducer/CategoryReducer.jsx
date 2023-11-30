@@ -1,12 +1,16 @@
 
-import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY} from "../../Types/Types"
+import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_CATEGORY  } from "../../Types/Types"
 
 
  const inital = {
 
     category : [] ,
-    createCategory :[], 
+    createCategory :[],
+    deleteCategory :[], 
+    EditCategory : [],
+
     loading : true , 
+    
 
 
  }
@@ -23,6 +27,22 @@ import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY} from "../../Types/Types"
         case CREATE_CATEGORY:
         return {
              createCategory: action.payload , 
+             loading :false,
+            error:action.error
+    } 
+
+    case DELETE_CATEGORY :
+        return {
+            ...state,
+            deleteCategory : action.payload , 
+             loading :false,
+            error:action.error
+    } 
+
+    case UPDATE_CATEGORY  :
+        return {
+            ...state,
+            EditCategory : action.payload , 
              loading :false,
             error:action.error
     } 
