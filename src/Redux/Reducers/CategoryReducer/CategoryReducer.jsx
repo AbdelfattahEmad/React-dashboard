@@ -8,11 +8,8 @@ import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_C
     createCategory :[],
     deleteCategory :[], 
     EditCategory : [],
-
     loading : true , 
     
-
-
  }
  
  const CategoryReducer = ( state= inital , action) =>{

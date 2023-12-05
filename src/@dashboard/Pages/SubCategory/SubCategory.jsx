@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
-import CategoryHook from "../../../Redux/Hooks/CategoryHooks"
+import GetCategoryHook from '../../../Redux/Hooks/CategoryHooks/GetCategoryHooks';
 
 
 
 const SubCategory = () => {
 
-  const {CategoryData ,Loading }= CategoryHook()
+  const {CategoryData ,Loading }= GetCategoryHook()
 
   const { t } = useTranslation();
 

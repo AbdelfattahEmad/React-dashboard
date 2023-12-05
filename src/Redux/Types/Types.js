@@ -9,4 +9,8 @@
 
   export const UPDATE_CATEGORY = "UPDATE_CATEGORY"
 
+  export const GET_ALL_BRANDS = "GET_ALL_BRANDS"
+
+
+
 

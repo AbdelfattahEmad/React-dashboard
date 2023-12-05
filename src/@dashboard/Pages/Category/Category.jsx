@@ -3,20 +3,19 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom';
 import Tabel from '../../Components/Tabel/Tabel';
 import Spinner from 'react-bootstrap/Spinner';
-import CategoryHook from "../../../Redux/Hooks/CategoryHooks"
-import { useRef, useState} from 'react';
-import { useDispatch } from 'react-redux'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import GetCategoryHook from "../../../Redux/Hooks/CategoryHooks/GetCategoryHooks";
+import DeleteCategoryHooks from "../../../Redux/Hooks/CategoryHooks/DeleteCategoryHooks";
 
 
 
 const Category = () => {
 
 
+   const {CategoryData ,Loading}= GetCategoryHook()
 
-
-  const {CategoryData ,Loading ,show,setShow ,handleClose ,handleShow ,setId ,handelDelete ,deletedId }= CategoryHook()
+  const {show,setShow ,handleClose ,handleShow ,setId ,handelDelete }= DeleteCategoryHooks()
 
 
   return (
@@ -79,10 +78,10 @@ const Category = () => {
 
               <Tabel.tabelRow key={item._id}>
 
-              <td>{item._id}</td>
-              <td>{item.name}</td>
-              <td>{item.image}</td>
-              <td>{item.createdAt}</td>
+                <td>{item._id}</td>
+                <td>{item.name}</td>
+                <td>{item.image}</td>
+                <td>{item.createdAt}</td>
 
               <td>
               <Link className="Table_Btn" to={`EditCategory/${item._id}`} >Edit</Link>

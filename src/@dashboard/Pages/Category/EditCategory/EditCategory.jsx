@@ -3,11 +3,16 @@ import "./EditCategory.scss"
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import EditCatrgoryHooks from '../../../../Redux/Hooks/CategoryHooks/EditCatrgoryHooks';
 
 
 const EditCategory = () => {
 
-  const {id} =useParams()
+
+  const {editID , onChangeId,editName ,onChangeName , setId, handelEditSubmit} = EditCatrgoryHooks()
+
+
+
 
 
   return (
@@ -17,12 +22,13 @@ const EditCategory = () => {
         
         <h5>Edit Category</h5>
 
-        <Form.Control type="Text" placeholder="Id"  className="input" />
+        <Form.Control value={editID} onChange={onChangeId} type="Text" placeholder="Id"  className="input" />
 
-        <Form.Control type="Text" placeholder="Category Name" className="input" />
+        <Form.Control value={editName} onChange={onChangeName} type="Text" placeholder="Category Name" className="input" />
 
 
-        <Button className='BtN'>Save Edit</Button>
+        <Button className='BtN' onClick={handelEditSubmit}>Save Edit</Button>
+        
         </div>
 
     </div>
