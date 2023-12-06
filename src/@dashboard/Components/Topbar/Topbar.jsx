@@ -13,7 +13,7 @@ import i18n from "../../../i18n";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect} from 'react';
 import i18next from 'i18next';
-import uiActions from "../../../Redux/slices/ui-slice";
+import {uiActions} from "../../../Redux/slices/ui-slice";
 import { useDispatch } from 'react-redux'
 
 

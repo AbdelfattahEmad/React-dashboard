@@ -1,5 +1,5 @@
 
-import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_CATEGORY  } from "../../Types/Types"
+import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_CATEGORY ,GET_ONE_CATEGORY   } from "../../Types/Types"
 
 
  const inital = {
@@ -7,6 +7,7 @@ import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_C
     category : [] ,
     createCategory :[],
     deleteCategory :[], 
+    selectedCategory:null,
     EditCategory : [],
     loading : true , 
     
@@ -24,6 +25,14 @@ import { GET_ALL_CATEGORY,GET_ERROR ,CREATE_CATEGORY , DELETE_CATEGORY ,UPDATE_C
         case CREATE_CATEGORY:
         return {
              createCategory: action.payload , 
+             loading :false,
+            error:action.error
+    } 
+
+    case GET_ONE_CATEGORY  :
+        return {
+            ...state,
+            selectedCategory : action.payload , 
              loading :false,
             error:action.error
     } 

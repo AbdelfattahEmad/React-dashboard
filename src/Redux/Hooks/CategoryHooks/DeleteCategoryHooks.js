@@ -1,11 +1,11 @@
 
-
 import { getCategoryAction , DeleteCategoryAction} from '../../Actions/CategoryAction';
 import { useDispatch } from 'react-redux'
 import  { useEffect, useRef, useState } from 'react'
 
 
 const DeleteCategoryHooks = () => {
+
 
 const deletedId= useRef(null)
 

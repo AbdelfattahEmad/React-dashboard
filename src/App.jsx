@@ -25,6 +25,7 @@ import AddCategory from './@dashboard/Pages/Category/AddCategory/AddCategory';
 import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
 import EditProducts from './@dashboard/Pages/Products/EditProducts/EditProducts';
 import AddBrand from './@dashboard/Pages/Brands/AddBrand/AddBrand';
+import EditBrands from './@dashboard/Pages/Brands/EditBrands/EditBrands';
 
 function App() {
   const detectLangue = () => {
@@ -88,6 +89,9 @@ function App() {
             <Route path="Brands">
               <Route path="" element={<Brands />} />
               <Route  path='AddBrand' element={<AddBrand />}/>
+              <Route  path="EditBrand/:id" element={<EditBrands />}/>
+
+
             </Route>
 
             <Route path="Coupons" element={<Coupons />} />

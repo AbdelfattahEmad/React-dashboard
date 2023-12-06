@@ -1,7 +1,28 @@
 .Brand_Container{
     height: 100vh;
+    .Tabel_Body{
+        padding: 15px;
+        margin:20px 90px ;
+        width: 95%;
+        max-height: calc(89% - 0.8rem);
 
-    
-    
-
+    }
 }
+.Table_Btn{
+    background-color: #405189;
+    border: 0.5px solid #405189;
+    padding: 0px 5px;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 4px;
+    &:hover{
+        background-color: #fff;
+        color: #405189;
+        border: 0.5px solid #fff;
+        padding: 0px 10px;
+
+
+
+    }
+    }

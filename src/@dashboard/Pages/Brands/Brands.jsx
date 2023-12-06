@@ -13,7 +13,6 @@ const Brands = ({title , btn, pathText  }) => {
 
   const {GetBarnds ,Loading}=GetBrandHook()
 
-   console.log(GetBarnds ,"hello  brands")
 
   const {t}=useTranslation()
 
@@ -26,9 +25,11 @@ const Brands = ({title , btn, pathText  }) => {
     <TitleView title="Brand Page" btn="AddBrand" pathText="AddBrand" />
 
       <div className='Tabel_Body'>
+
               <Tabel>
 
                 <Tabel.tabelHead>
+
                     <tr>
                     <th>id</th>
                     <th>name</th>
@@ -36,37 +37,37 @@ const Brands = ({title , btn, pathText  }) => {
                     <th>SubCategory</th>
                     <th>Setting</th>
                     </tr>
+                    
                 </Tabel.tabelHead>
-
 
                 <Tabel.tabelebody>
 
-    {
-            Loading === false ? (
+              {
+                      Loading === false ? (
 
-              GetBarnds ? GetBarnds.map((item)=>{
-                
+                        GetBarnds ? GetBarnds.map((item)=>{
+                          
 
-              return(
-                <Tabel.tabelRow key={item._id}>
-                  <td>{item._id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.image}</td>
-                  <td>{item.createdAt}</td>
-                <td>
-                <Link className="Table_Btn" to={`EditBrands/${item._id}`}>Edit</Link>
-                <button className="Table_Btn">Delete</button>
-                </td>
-              </Tabel.tabelRow>
+                        return(
+                          <Tabel.tabelRow key={item._id}>
+                            <td>{item._id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.image}</td>
+                            <td>{item.createdAt}</td>
+                          <td>
+                          <Link className="Table_Btn" to={`EditBrand/${item._id}`}>Edit</Link>
+                          <button className="Table_Btn">Delete</button>
+                          </td>
+                        </Tabel.tabelRow>
 
-                )
-            }): <h1>No Brands</h1>
+                          )
+                      }): <h1>No Brands</h1>
 
-          ):<Spinner animation="border" variant="primary" />
+                    ):<Spinner animation="border" variant="primary" />
 
 
-          
-        }
+                    
+              }
 
 
                 </Tabel.tabelebody>

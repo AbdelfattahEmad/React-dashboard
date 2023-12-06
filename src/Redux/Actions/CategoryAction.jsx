@@ -1,7 +1,8 @@
 
-import { GET_ALL_CATEGORY, GET_ERROR ,CREATE_CATEGORY,UPDATE_CATEGORY}  from "../Types/Types"
+import { GET_ALL_CATEGORY, GET_ERROR ,CREATE_CATEGORY,UPDATE_CATEGORY, DELETE_CATEGORY , GET_ONE_CATEGORY
+}  from "../Types/Types"
 import baseUrl from "../Api/basUrl"
-import { insertDataWithImg , DeleteData, put} from "../Hooks/DataHooks/DataHooks";
+import { insertDataWithImg , DeleteData,insertUpdateData} from "../Hooks/DataHooks/DataHooks";
 
 
 
@@ -23,6 +24,27 @@ export const getCategoryAction =()=>  async(dispatch) => {
         })
     }
 }
+
+
+export const getoNECategoryAction =(id)=>  async(dispatch) => {
+    try {
+       const response = await baseUrl.get(`categories/${id}`);
+
+       dispatch({
+            type : GET_ONE_CATEGORY ,
+            payload : response.data.data,
+            loading : true,
+            error: false
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
 
 
 
@@ -49,7 +71,6 @@ export const CreateCategoryAction =(formData)=> async(dispatch) => {
 export const DeleteCategoryAction =(id)=>  async(dispatch) => {
     try {
        const response = await DeleteData(`categories/${id}`);
-       console.log(response.data)
 
        dispatch({
             type : DELETE_CATEGORY ,
@@ -68,9 +89,10 @@ export const DeleteCategoryAction =(id)=>  async(dispatch) => {
 
 
 
-export const EditCategoryAction =(id)=>  async(dispatch) => {
+export const EditCategoryAction =(Item)=>  async(dispatch) => {
+    console.log(Item)
     try {
-       const response = await put(`categories/${id}`);
+       const response = await insertUpdateData(`categories/${Item._id}`,{name:Item.name});
        console.log(response.data)
 
        dispatch({

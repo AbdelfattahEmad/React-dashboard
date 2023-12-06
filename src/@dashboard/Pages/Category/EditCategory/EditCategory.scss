@@ -9,6 +9,13 @@
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 0px 1px 0px #fff;
+        .inputs{
+            #upload-photo{
+                opacity: 0;
+                position: absolute;
+                z-index: -1;
+            }
+        }
 
 
 

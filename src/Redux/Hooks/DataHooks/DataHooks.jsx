@@ -70,11 +70,11 @@ const DeleteData = async(Url , params) => {
 
 
 
-const insertUpdateData = async(url , params)=>{
-    const config = {
-        headers :{Authorization : `Bearer ${localStorage.getItem("token")}`}
-    }
-    const res = await baseUrl.put(url ,params , config)
+const insertUpdateData = async(url ,body, RequestConfig)=>{
+    // const config = {
+    //     headers :{Authorization : `Bearer ${localStorage.getItem("token")}`}
+    // }
+    const res = await baseUrl.put(url ,body, RequestConfig)
     return res
 
 }
