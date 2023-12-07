@@ -1,6 +1,6 @@
-import { GET_ALL_BRANDS, GET_ERROR ,ADD_BRANDS ,DELETE_BRANDS}  from "../Types/Types"
+import { GET_ALL_BRANDS, GET_ERROR ,ADD_BRANDS ,DELETE_BRANDS ,EDIT_BRANDS , GET_ONE_BRAND }  from "../Types/Types"
 import baseUrl from "../Api/basUrl"
-import {DeleteData, insertDataWithImg} from "../Hooks/DataHooks/DataHooks";
+import {DeleteData, insertDataWithImg, insertUpdateData} from "../Hooks/DataHooks/DataHooks";
 
 
 
@@ -23,6 +23,28 @@ export const getBrandAction =()=> async(dispatch) => {
         })
     }
 }
+
+
+export const getOneBrandAction =(id)=>  async(dispatch) => {
+    try {
+       const response = await baseUrl.get(`brands/${id}`);
+
+       dispatch({
+            type : GET_ONE_BRAND ,
+            payload : response.data.data,
+            loading : true,
+            error: false
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
+
 
 
 
@@ -48,14 +70,16 @@ export const AddBrandAction =(formData)=> async(dispatch) => {
 }
 
 
-export const DeleteBrandAction =(formData)=> async(dispatch) => {
+
+
+export const DeleteBrandAction =(id)=> async(dispatch) => {
     try {
 
-       const response = await DeleteData("brands", formData);
+       const response = await DeleteData(`brands/${id}`);
 
        dispatch({
             type :DELETE_BRANDS ,
-            payload : response.data.data,
+            payload : response.data,
             loading : true,
             error: false
         })
@@ -67,5 +91,26 @@ export const DeleteBrandAction =(formData)=> async(dispatch) => {
         })
     }
 }
+
+
+export const EditBrandAction =(Item)=>  async(dispatch) => {
+    try {
+       const response = await insertUpdateData(`brands/${Item._id}`,{name:Item.name});
+
+       dispatch({
+            type : EDIT_BRANDS ,
+            payload : response.data,
+            loading : true,
+            error: false
+        })
+    } catch(err) {
+        dispatch({
+            type : GET_ERROR ,
+            payload : err,
+            error : true,
+        })
+    }
+}
+
 
 

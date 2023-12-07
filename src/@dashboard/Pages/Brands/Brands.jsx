@@ -6,20 +6,45 @@ import TitleView from '../../Components/TitleView/TitelView'
 import Spinner from 'react-bootstrap/Spinner';
 import GetBrandHook from '../../../Redux/Hooks/BrandHooks/GetBrandHooks'
 import { Link } from 'react-router-dom'
+import DeleteBrandHook from '../../../Redux/Hooks/BrandHooks/DeleteBrandHook'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
-const Brands = ({title , btn, pathText  }) => {
 
+
+const Brands = ({title,btn,pathText}) => {
 
   const {GetBarnds ,Loading}=GetBrandHook()
+  console.log(GetBarnds)
 
 
+  const{show,setShow ,handleClose ,handleShow ,setId ,handelDelete}=DeleteBrandHook()
+  
   const {t}=useTranslation()
 
-
   return (
+<>
+<Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+          <Modal.Title>Delete operation!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>are sure of the deleting process ?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handelDelete}>
+           Confirm 
+          </Button>
+        </Modal.Footer>
+        </Modal>
+
 
     <div className="Brand_Container">
+
+     
+
 
 
     <TitleView title="Brand Page" btn="AddBrand" pathText="AddBrand" />
@@ -56,7 +81,7 @@ const Brands = ({title , btn, pathText  }) => {
                             <td>{item.createdAt}</td>
                           <td>
                           <Link className="Table_Btn" to={`EditBrand/${item._id}`}>Edit</Link>
-                          <button className="Table_Btn">Delete</button>
+                          <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}}>Delete</button>
                           </td>
                         </Tabel.tabelRow>
 
@@ -79,6 +104,8 @@ const Brands = ({title , btn, pathText  }) => {
 
 
     </div>
+
+    </>
 
 
   )

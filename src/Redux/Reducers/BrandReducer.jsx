@@ -1,5 +1,5 @@
 
-import { GET_ERROR , GET_ALL_BRANDS ,ADD_BRANDS } from "../Types/Types"
+import { GET_ERROR , GET_ALL_BRANDS ,ADD_BRANDS , DELETE_BRANDS , EDIT_BRANDS ,GET_ONE_BRAND } from "../Types/Types"
 
 
 const inital = {
@@ -7,8 +7,11 @@ const inital = {
     Brands : [] ,
 
     AddBrands:[],
-    
-    loading : true , 
+    GetOneBrands:[],
+
+    DeleteBrands :[],
+    EditBrands :[],
+    loading :true , 
     
  }
 
@@ -23,13 +26,38 @@ const BrandReducer = ( state= inital , action) =>{
                 loading :false,
                 error:action.error
         } 
+        case GET_ONE_BRAND :
+            return {
+                ...state,
+                GetOneBrands : action.payload , 
+                loading :false,
+                error:action.error
+        } 
+
         case ADD_BRANDS:
             return {
                 ...state,
                 AddBrands : action.payload , 
                 loading :false,
                 error:action.error
+        }  
+        case EDIT_BRANDS:
+            return {
+                ...state,
+                EditBrands: action.payload , 
+                loading :false,
+                error:action.error
         }   
+
+        
+        case DELETE_BRANDS:
+            return {
+                ...state,
+                DeleteBrands: action.payload , 
+                loading :false,
+                error:action.error
+        }   
+
   
         case  GET_ERROR :
 

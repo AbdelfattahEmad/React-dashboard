@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { EditCategoryAction, getoNECategoryAction } from '../../Actions/CategoryAction'
 import {useParams} from "react-router-dom"
 import empty from "../../../assets/Images/empty.png"
+import { EditBrandAction, getOneBrandAction } from '../../Actions/BrandAction'
 
 
 
 
 
-const EditCatrgoryHooks = () => {
+const EditBrandHooks = () => {
 
     const {id} = useParams()
 
@@ -21,17 +21,11 @@ const EditCatrgoryHooks = () => {
     const [loading , setLoading] =useState(true)
 
 
-
-
-
-  
-
-
     useEffect(()=>{
 
         const run =async()=>{
 
-           await dispatch(getoNECategoryAction(id))
+           await dispatch(getOneBrandAction(id))
 
         }
         run()
@@ -40,7 +34,7 @@ const EditCatrgoryHooks = () => {
 
 
 
-    const Item = useSelector((state)=>state.CategoryReducer.selectedCategory)
+    const Item = useSelector((state)=>state.BrandReducer.GetOneBrands)
 
     
 
@@ -71,7 +65,7 @@ const EditCatrgoryHooks = () => {
     const handelEditSubmit =(event)=>{
         event.preventDefault() 
         setLoading(true)
-        dispatch(EditCategoryAction({_id:Item._id ,name :name}))
+        dispatch(EditBrandAction({_id:Item._id ,name :name}))
         setImg(empty)
         setName("")
         setLoading(false)
@@ -108,4 +102,4 @@ const EditCatrgoryHooks = () => {
 
 }
 
-export default EditCatrgoryHooks
+export default EditBrandHooks

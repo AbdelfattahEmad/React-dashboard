@@ -1,56 +1,47 @@
-.EditBrand_Head{
-        height: 100vh;
-    
-        h2{
-            color: black;
-            
-            font-size: 40px;
-            font-family: fantasy;
-            margin-inline-start: 20px;
-            margin-top: 10px;
-            margin-bottom: 25x;
-            text-align: center;
-        }
+.Edit_Container{
+    height: 100vh;
+    margin-top: 30px;
+
+    .Forms{
+        margin: auto;
+        width: 45vw;
+        background-color: #405189;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0px 1px 0px #fff;
         .inputs{
-            margin-inline-start: 20px;
-            background-color: #405189;
-            border: 1px solid #eee;
-            padding: 30px;
-            width: 500px;
-            border-radius: 20px;
-            margin: auto;
-            box-shadow: 0 0px 1px 0px #fff;
-            input{
-                padding: 15px 100px;
-                border: 1px solid #fff9;
-                border-color: #fff;
-                border-radius: 6px;
-                box-shadow: 0 0px 1px 0px #fff8;
-                color: #405189;
-                margin: 18px 20px;
-                display: block;
-                &:hover{
-                    color: black;
-                     border: 1px solid #eee;
-                }
-            }
-    
-            .Btn_sub{
-                border: 1px solid #fff9;
-                padding:4px 25px;
-                border-radius: 6px;
-                text-align: center;
-                margin: 5px 5px 5px 150px;
-                border-color: #fff9;
-                color: #405189;
-                background-color:#FFF;
-                &:hover{
-                    background-color:#405189;
-                    color: #fff;
-                }        
+            #upload-photo{
+                opacity: 0;
+                position: absolute;
+                z-index: -1;
             }
         }
-    
-        
-        
+
+
+
+        h5{
+            padding: 10px;
+            margin-inline-start:  20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .input{
+            width: 600px;
+            margin-inline-start:  20px;
+            padding: 18px;
+            margin-top: 10px;
+        }
+        .BtN{
+            background-color: #464644;
+            padding: 7px 15px;
+            margin:8px 2px 5px 20px ;
+            border-color: #fff7;
+            margin-top: 20px;
+        }
     }
+
+
+}

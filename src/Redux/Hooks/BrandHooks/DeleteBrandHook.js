@@ -1,6 +1,44 @@
-import React from 'react'
+import { getBrandAction , DeleteBrandAction} from '../../Actions/BrandAction';
+
+import { useDispatch } from 'react-redux'
+import  { useEffect, useRef, useState } from 'react'
+
 
 const DeleteBrandHook = () => {
+
+    
+
+
+
+const deletedId= useRef(null)
+
+const dispatch = useDispatch()
+
+
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+
+const handleShow = () => setShow(true)    
+  
+
+const setId =(id)=>{
+  deletedId.current=id
 }
+
+
+const handelDelete = ()=>{
+   dispatch(DeleteBrandAction(deletedId.current))
+   setShow(false)
+   dispatch(getBrandAction())
+}
+
+return{show,setShow ,handleClose ,handleShow ,setId ,handelDelete}
+  
+
+}
+
+
+
 
 export default DeleteBrandHook

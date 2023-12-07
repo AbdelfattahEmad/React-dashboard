@@ -17,7 +17,16 @@
 //BRANDS
   export const GET_ALL_BRANDS = "GET_ALL_BRANDS"
   export const ADD_BRANDS = "ADD_BRANDS"
+  
   export const DELETE_BRANDS = "DELETE_BRANDS"
+  
+  export const EDIT_BRANDS = "EDIT_BRANDS"
+
+  export const GET_ONE_BRAND  = "GET_ONE_BRAND"
+
+
+
+  
 
   
 

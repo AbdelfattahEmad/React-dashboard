@@ -59,7 +59,7 @@ const EditCategory = () => {
             <FontAwesomeIcon icon={faCheck} style={{color: "#3bf109",}} /> </span>:null
 
         }
-                <ToastContainer />
+            <ToastContainer />
 
                 </div>
 
