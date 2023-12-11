@@ -72,7 +72,7 @@ function App() {
             <Route path="SubCategories">
               <Route path="" element={<SubCategory />} />
               <Route path="AddSubCategory" element={<AddSubCategory />} />
-              <Route path="Edit/:id" element={<EditSubCategory />} />
+              <Route path="EditSubCategory/:id" element={<EditSubCategory />} />
             </Route>
 
 

@@ -11,6 +11,7 @@ const Edit = () => {
 
     <div className='Edit_Title'>
     <h3>Edit Section</h3>
+    
     <Button className='BTN'>Save Edit</Button>
     </div>
 

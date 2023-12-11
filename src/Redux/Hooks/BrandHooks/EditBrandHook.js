@@ -49,7 +49,6 @@ const EditBrandHooks = () => {
 
 
     const onImageChange = (e) =>{
-  
         if(e.target.files && e.target.files[0]){
           setImg(URL.createObjectURL(e.target.files[0]))
           SetselectedFile(e.target.files[0])

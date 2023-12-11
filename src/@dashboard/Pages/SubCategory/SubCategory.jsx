@@ -8,15 +8,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
-import GetCategoryHook from '../../../Redux/Hooks/CategoryHooks/GetCategoryHooks';
+import GetSubcategoryHooks from '../../../Redux/Hooks/SubCategory/SubcategoryHooks';
 
 
 
 const SubCategory = () => {
 
-  const {CategoryData ,Loading }= GetCategoryHook()
-
   const { t } = useTranslation();
+
+
+  const { GetSubCategory , Loading }= GetSubcategoryHooks()
+
 
   return (
     <div className="Sub_Container">
@@ -32,52 +34,40 @@ const SubCategory = () => {
           <Tabel.tabelHead >
               <tr>
               <th>id</th>
+              <th>Name</th>
               <th>img</th>
               <th>Descreption</th>
-              <th>quantity</th>
-              <th>Price</th>
-              <th>SubCategory</th>
               <th>Setting</th>
               </tr>
           </Tabel.tabelHead>
+          <Tabel.tabelebody>
+
+
         {
 
         Loading === false ? (
-          CategoryData ? CategoryData.map((item)=>{
-            return(
-              <Tabel.tabelebody>
-                <Tabel.tabelRow  key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.image}</td>
-                  <td>{item.slug}</td>
-                  <td>{item.price}</td>
-                  <td>{item.SubCategory}</td>
-                  <td>
-                    <Dropdown>
-                      <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        <FontAwesomeIcon
-                          icon={faEllipsisVertical}
-                          style={{ color: '#27282b' }}
-                        />
-                      </Dropdown.Toggle>
 
-                      <Dropdown.Menu>
-                        <Link to={'Edit/' + item?.id}>Edit</Link>
-                        <Dropdown.Item href="DeleteSubCategory">
-                          Delete
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
+          GetSubCategory ? GetSubCategory.map((item)=>{
+            return(
+                <Tabel.tabelRow  key={item._id}>
+                  <td>{item._id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.slug}</td>
+                  <td>
+                  <Link className="Table_Btn" to={`EditSubCategory/${item._id}`} >Edit</Link>
+
+                  <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}} >Delete</button>
+
                   </td>
                 </Tabel.tabelRow>
-              </Tabel.tabelebody>
               )
-          }):<h1> No Categores</h1>
+          }):<td> No  SubCategores</td>
 
           ):<Spinner animation="border" variant="primary" />
 
         }
+        </Tabel.tabelebody>
         </Tabel>
         </div>
         
