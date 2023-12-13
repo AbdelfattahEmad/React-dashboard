@@ -3,23 +3,35 @@
     
     h2{
         color: black;
-        
-        font-size: 40px;
-        font-family: fantasy;
+        font-size: 20px;
         margin-inline-start: 20px;
         margin-top: 10px;
         margin-bottom: 25x;
-        text-align: center;
+
     }
     .inputs{
         margin-inline-start: 20px;
         background-color: #405189;
         border: 1px solid #eee;
-        padding: 30px;
+        padding: 20px;
         width: 500px;
         border-radius: 20px;
         margin: auto;
         box-shadow: 0 0px 1px 0px #fff;
+        .form-Control{
+            .selectForm{
+                margin-inline-start: 15px;
+                background-color: #fff;
+                border: 1px solid #eee;
+                padding: 16px 90px;
+                width: 380px;
+                box-shadow: 0 0px 1px 0px #fff;
+                margin-bottom: 20px;
+                padding: 20px 28px;
+            
+            
+            }
+        }
 
         input{
             padding: 15px 100px;
@@ -61,4 +73,12 @@
 
     
     
+}
+
+.error{
+    background-color: #f16448;
+    padding: 8px 8px;
+    border-radius: 8px;
+    text-align: center;
+
 }

@@ -1,82 +1,53 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
+import "./EditSubCategory.scss"
 import Form from 'react-bootstrap/Form';
-import "./EditSubCategory"
+import { Button } from 'react-bootstrap';
+import { ToastContainer} from 'react-toastify';
+import EditSubCatrgoryHooks from '../../../../Redux/Hooks/SubCategory/EditSubCategoryHooks';
 
 
-const Edit = () => {
+
+const EditSubCategory = () => {
+
+  
+
+  const {name,onChangeName,category, onChangeCategory,handelEditSubmit ,ispress} =EditSubCatrgoryHooks()
+
   return (
     <div className='Edit_Container'>
 
+      <div className='Forms'>
+        
+        <h5>Edit Category</h5>
 
-    <div className='Edit_Title'>
-    <h3>Edit Section</h3>
-    
-    <Button className='BTN'>Save Edit</Button>
-    </div>
-
+        <div className='inputs'>
 
 
-    <div className='Information_inputs'>
-    <Form>
-    <Form.Group className="mb-3" >
-      <Form.Label>First Name </Form.Label>
-      <Form.Control  placeholder="First Name" />
-    </Form.Group>
+      <form>
 
-    <Form.Group className="mb-3" >
-      <Form.Label>Last Name</Form.Label>
-      <Form.Control  placeholder="Last Name" />
-    </Form.Group>
+          <Form.Control value={name} onChange={onChangeName} type="Text" placeholder="Name" className="input" /> 
 
-    <Form.Group className="mb-3" >
-      <Form.Label>The original administration</Form.Label>
-      <Form.Control  placeholder="The original administration" />
-    </Form.Group>
+          <Form.Control value={category} onChange={onChangeCategory} type="Text" placeholder="Category Name" className="input" /> 
+
+          <Button className='BtN' onClick={handelEditSubmit}>Save Edit</Button>
+
+        </form>
 
 
 
-    <Form.Group className="mb-3" >
-      <Form.Label>Administration number</Form.Label>
-      <Form.Control  placeholder="Administration number" />
-    </Form.Group>
+        {
+         ispress ? loading ? <Spinner animation="border" role="status"></Spinner>:
+          <span style={{textAlign:"center", fontSize:"30px",padding:"5px",color: "#fff"}}>Done 
+            <FontAwesomeIcon icon={faCheck} style={{color: "#3bf109",}} /> </span>:null
 
+        }
+            <ToastContainer />
 
-    <Form.Group className="mb-3" >
-      <Form.Label>The duration of the transaction</Form.Label>
-      <Form.Control  placeholder="The duration of the transaction" />
-    </Form.Group>
+        </div>
 
-
-
-
-
-
-    <Form.Group className="mb-3" >
-    <Form.Label>Number of transactions </Form.Label>
-
-      <Form.Check type="checkbox" label="unified" />
-
-      <Form.Check type="checkbox" label="private" />
-
-    </Form.Group>
-
-
-
-
-
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-  </Form>
-
-
+        </div>
 
     </div>
-
-  </div>
-
-    )
+  )
 }
 
-export default Edit
+export default EditSubCategory

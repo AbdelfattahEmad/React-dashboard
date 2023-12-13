@@ -60,7 +60,6 @@ const DeletDataToken = async(url , params)=> {
 const DeleteData = async(Url , params) => {
 
     const res = await baseUrl.delete(Url,params)
-    console.log(res)
 
 
     return res.data

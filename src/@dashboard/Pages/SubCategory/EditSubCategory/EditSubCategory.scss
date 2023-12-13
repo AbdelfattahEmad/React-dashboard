@@ -1,29 +1,47 @@
 .Edit_Container{
-    padding: 5px;
+    height: 100vh;
+    margin-top: 30px;
 
-    .Edit_Title{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 12px 3px;
-        background-color: #eee;
-        padding: 10px 0px;
-        h3{
-            font-size: 25px;
-            font-weight: bold;
-            font-family: auto;
-
-        
-        }
-        .BTN{
-            padding: 7px;
-            border: 1px solid #405189;
-            background-color: #405189;
-            color: #eee;
-            border-radius: 10px;
-            font-family: auto;
-            
+    .Forms{
+        margin: auto;
+        width: 45vw;
+        background-color: #405189;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0px 1px 0px #fff;
+        .inputs{
+            #upload-photo{
+                opacity: 0;
+                position: absolute;
+                z-index: -1;
+            }
         }
 
+
+
+        h5{
+            padding: 10px;
+            margin-inline-start:  20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .input{
+            width: 600px;
+            margin-inline-start:  20px;
+            padding: 18px;
+            margin-top: 10px;
+        }
+        .BtN{
+            background-color: #464644;
+            padding: 7px 15px;
+            margin:8px 2px 5px 20px ;
+            border-color: #fff7;
+            margin-top: 20px;
+        }
     }
+
+
 }

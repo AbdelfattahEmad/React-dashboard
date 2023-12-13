@@ -67,7 +67,7 @@ const AddSubCategory= () => {
 
         <form onSubmit={handleSubmit}>
           <div className='form-Control'>
-          <input type='text' name="name" value={values.name} onChange={handleChange} onBlur={handleBlur}  placeholder='Name' />
+          <input  type='text' name="name" value={values.name} onChange={handleChange} onBlur={handleBlur}  placeholder='Name' />
           {
                 touched.name && errors.name ?<p className='error'>{errors.name}</p>:null
           }
@@ -76,7 +76,8 @@ const AddSubCategory= () => {
 
           <div className='form-Control'>
 
-          <Form.Select aria-label="Default select example"
+          <Form.Select aria-label="Default select example" 
+          className='selectForm'
             name="category" value={values.category} onChange={handleChange} onBlur={handleBlur} >
               <option selected="true" >Selected Category</option>
 

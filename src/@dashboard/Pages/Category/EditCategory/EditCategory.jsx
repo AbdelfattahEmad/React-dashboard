@@ -15,10 +15,6 @@ const EditCategory = () => {
 
   const {name, img ,onChangeName, onImageChange,handelEditSubmit ,ispress} =EditCatrgoryHooks()
 
-
-
-
-
   return (
     <div className='Edit_Container'>
 
