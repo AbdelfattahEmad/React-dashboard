@@ -1,5 +1,9 @@
 import baseUrl from "../../Api/basUrl"
     
+
+
+
+
 const insertDataWithImg = async(Url , params) => {
     
     const config = {
@@ -9,6 +13,8 @@ const insertDataWithImg = async(Url , params) => {
     const res = await baseUrl.post(Url, params , config)
     return res
 }
+
+
 
 
 

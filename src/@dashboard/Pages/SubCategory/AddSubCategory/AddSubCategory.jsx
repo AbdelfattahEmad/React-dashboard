@@ -99,10 +99,6 @@ const AddSubCategory= () => {
           </div>
 
 
-
-
-
-
         <button className='Btn_sub' type='submit'>Submit</button>
 
         </form>

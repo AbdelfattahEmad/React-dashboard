@@ -8,7 +8,6 @@ const inital = {
 
     AddBrands:[],
     GetOneBrands:[],
-
     DeleteBrands :[],
     EditBrands :[],
     loading :true , 

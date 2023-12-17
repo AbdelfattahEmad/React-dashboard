@@ -3,6 +3,7 @@ import uiSlice from "../slices/ui-slice";
 import CategoryReducer from "../Reducers/CategoryReducer/CategoryReducer"
 import SubCategoryReducer from "../Reducers/CategoryReducer/SubCategoryReducer"
 import BrandReducer from "../Reducers/BrandReducer";
+import ProductReducer from "../Reducers/ProductReducer";
 
 
 
@@ -12,9 +13,9 @@ const store = configureStore({
         uiState : uiSlice ,
         CategoryReducer : CategoryReducer,
         SubCategoryReducer:SubCategoryReducer,
-        BrandReducer:BrandReducer
-    
-
+        BrandReducer:BrandReducer,
+        ProductReducer:ProductReducer
+        
     }
 })
 

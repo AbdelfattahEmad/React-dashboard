@@ -20,6 +20,7 @@
         box-shadow: 0 0px 1px 0px #fff8;
 
 
+
         input{
             padding: 15px 100px;
             border: 1px solid #fff9;
@@ -60,4 +61,58 @@
 
     
     
+}
+
+.form-Control{
+    margin: 10px;
+    .input_add{
+        padding: 15px 100px;
+        border: 1px solid #fff9;
+        background-color: #fff9;
+        border-color: #fff9;
+        border-radius: 6px;
+        box-shadow: 0 0px 1px 0px #fff8;
+        color: #0d6efd;
+        margin: 18px 20px;
+        display: block;
+
+    }
+
+    .image_choose{
+        padding:13px 20px;
+        border: 1px solid #fff9;
+        background-color: #fff9;
+        border-color: #fff9;
+        border-radius: 6px;
+        box-shadow: 0 0px 1px 0px #fff8;
+        color: #0d6efd;
+        margin: 18px 20px;
+        display: block;
+
+    }
+    .Photo_inputs{
+        .input_img{
+            padding: 15px 38px;
+            border: 1px solid #fff9;
+            background-color: #fff9;
+            border-color: #fff9;
+            border-radius: 6px;
+            box-shadow: 0 0px 1px 0px #fff8;
+            color: #0d6efd;
+            margin: 18px 20px;
+            display: block;
+    
+
+        }
+
+    }
+
+}
+
+
+#upload-photo{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
 }

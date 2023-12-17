@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect,useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getOneSubCategoryAction ,EditSubCategoryAction } from '../../Actions/SubCategoryAction'
 import {useParams} from "react-router-dom"
@@ -35,7 +35,6 @@ const EditSubCatrgoryHooks = () => {
 
 
     const Item = useSelector((state)=>state.SubCategoryReducer.getOneSubCategory)
-        console.log(Item)
     
 
     useEffect(()=>{

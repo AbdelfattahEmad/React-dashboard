@@ -16,7 +16,6 @@ import Button from 'react-bootstrap/Button';
 const Brands = ({title,btn,pathText}) => {
 
   const {GetBarnds ,Loading}=GetBrandHook()
-  console.log(GetBarnds)
 
 
   const{show,setShow ,handleClose ,handleShow ,setId ,handelDelete}=DeleteBrandHook()
