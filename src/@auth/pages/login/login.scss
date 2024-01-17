@@ -23,18 +23,24 @@
 
         .Form{
             padding: 5px;
-            text-align: start;
+            text-align: center;
+            .input{
+                padding: 14px 2px;
+                margin-top: 25px;
+
+            }
+            .Button{
+                padding: 8px 100px;
+                background-color: #0ab39c;
+                color: #ffffff;
+                border-color: #0ab39c;
+                margin: auto;
+                
+                
+            }
+    
         }
 
-        .Button{
-            padding: 8px 100px;
-            background-color: #0ab39c;
-            color: #ffffff;
-            border-color: #0ab39c;
-            margin: 0;
-            
-            
-        }
 
         .media{
             p{

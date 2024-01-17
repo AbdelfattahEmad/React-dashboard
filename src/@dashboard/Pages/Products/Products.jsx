@@ -20,7 +20,6 @@ const Products = () => {
 
   const {show ,handleClose ,handleShow ,setId ,handelDelete }= DeleteProductHooks()
 
-  console.log(ProductData)
 
   
 
@@ -78,7 +77,8 @@ const Products = () => {
                 Loading === false ? (
       
                   ProductData ? ProductData.map((item)=>{
-                  return(
+
+                return(
                     <Tabel.tabelRow key={item._id}>
                       <td>{item.title}</td>
                       <td>{item.imageCover}</td>
@@ -86,12 +86,11 @@ const Products = () => {
                       <td>{item.subcategory}</td>
                       <td>{item.price}</td>
                       <td>{item.quantity}</td>
-                    <td>
-                    <Link className="Table_Btn" to={`EditCategory/${item._id}`}>Edit</Link>
-      
-                    <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}} >Delete</button>
-      
-                    </td>
+                      <td>
+                        <Link className="Table_Btn" to={`EditProduct/${item._id}`}>Edit</Link>
+
+                        <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}} >Delete</button>
+                      </td>
                   </Tabel.tabelRow>
       
                     )

@@ -1,8 +1,9 @@
 
-import { GET_ALL_CATEGORY, GET_ERROR ,CREATE_CATEGORY,UPDATE_CATEGORY, DELETE_CATEGORY , GET_ONE_CATEGORY
-}  from "../Types/Types"
+import { GET_ALL_CATEGORY, GET_ERROR ,CREATE_CATEGORY,UPDATE_CATEGORY, DELETE_CATEGORY , GET_ONE_CATEGORY}from "../Types/Types"
+
 import baseUrl from "../Api/basUrl"
 import { insertDataWithImg , DeleteData,insertUpdateData} from "../Hooks/DataHooks/DataHooks";
+
 
 
 
@@ -89,11 +90,9 @@ export const DeleteCategoryAction =(id)=>  async(dispatch) => {
 
 
 
-export const EditCategoryAction =(Item)=>  async(dispatch) => {
-    console.log(Item)
+export const EditCategoryAction =(Item)=> async(dispatch) => {
     try {
        const response = await insertUpdateData(`categories/${Item._id}`,{name:Item.name});
-       console.log(response.data)
 
        dispatch({
             type : UPDATE_CATEGORY ,

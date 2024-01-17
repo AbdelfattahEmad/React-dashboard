@@ -1,4 +1,4 @@
-import baseUrl from "../../Api/basUrl"
+import baseUrl, { loggedInstance } from "../../Api/basUrl"
     
 
 
@@ -33,6 +33,21 @@ const insertData = async(Url , params) => {
     const res = await baseUrl.post(Url ,params , config)
     return res
 }
+
+const useInserstData = async(Url , params) => {
+    const res = await baseUrl.post(Url ,params)
+    return res
+}
+
+const useInserstDataWithAuth = async(Url , body) => {
+    const res = await loggedInstance.post(Url ,body)
+    return res
+}
+
+
+
+
+
 
 
 //insert data
@@ -87,4 +102,4 @@ const insertUpdateData = async(url ,body, RequestConfig)=>{
 
 
 
-export {insertDataWithImg ,insertData , getData , put , getDataToken , DeletDataToken , insertUpdateData , DeleteData  }  
+export {insertDataWithImg ,insertData , getData , put , getDataToken , DeletDataToken , insertUpdateData , DeleteData ,useInserstData ,useInserstDataWithAuth }  

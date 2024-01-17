@@ -98,7 +98,7 @@ const Sidebar = () => {
 
         <li className="menu-list__item">
 
-          <Link to="Coupons" className="menu-list__link">
+          <Link to="getCoupons" className="menu-list__link">
             <FontAwesomeIcon icon={faCube} className="menu-list__icon" />
             {t("coupons")}
 

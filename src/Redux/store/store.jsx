@@ -4,6 +4,8 @@ import CategoryReducer from "../Reducers/CategoryReducer/CategoryReducer"
 import SubCategoryReducer from "../Reducers/CategoryReducer/SubCategoryReducer"
 import BrandReducer from "../Reducers/BrandReducer";
 import ProductReducer from "../Reducers/ProductReducer";
+import AuthReducer from "../Reducers/AuthReducer";
+import CouponReducer from "../Reducers/CouponReducer";
 
 
 
@@ -14,7 +16,9 @@ const store = configureStore({
         CategoryReducer : CategoryReducer,
         SubCategoryReducer:SubCategoryReducer,
         BrandReducer:BrandReducer,
-        ProductReducer:ProductReducer
+        ProductReducer:ProductReducer,
+        AuthReducer:AuthReducer,
+        CouponReducer:CouponReducer
         
     }
 })

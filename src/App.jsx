@@ -26,8 +26,17 @@ import AddProducts from './@dashboard/Pages/Products/Addproducts/AddProducts';
 import EditProducts from './@dashboard/Pages/Products/EditProducts/EditProducts';
 import AddBrand from './@dashboard/Pages/Brands/AddBrand/AddBrand';
 import EditBrands from './@dashboard/Pages/Brands/EditBrands/EditBrands';
+import {useDispatch} from "react-redux"
+import { loadSignUserAction } from './Redux/Actions/AuthActions';
+import LoggedUserGuards from './guards/loggedUser.guards';
+import GetCoupons from './@dashboard/Pages/Coupons/getCoupon/GetCoupons';
+import  { Toaster } from 'react-hot-toast';
+
 
 function App() {
+
+  const dispatch = useDispatch()
+  
   const detectLangue = () => {
     const lang = localStorage.getItem('i18nextLng');
 
@@ -44,12 +53,17 @@ function App() {
       i18n.changeLanguage('en');
     }
   };
-
   useEffect(() => {
     detectLangue();
+    dispatch(loadSignUserAction())
   }, []);
+
+  useEffect(()=>{
+
+  })
   return (
     <>
+    <Toaster/>
       <Suspense>
         {' '}
         {/* to load translation files when opening app*/}
@@ -59,7 +73,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
 
-          <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<LoggedUserGuards > <DashboardLayout /> </LoggedUserGuards> }>
             <Route path="" element={<Main />} />
             <Route path="Main" element={<Main />} />
 
@@ -80,7 +94,7 @@ function App() {
             <Route path="Products" > 
               <Route path="" element={<Products />} />
               <Route path="AddProduct" element={<AddProducts />} />
-              <Route path="Edit/:id" element={<EditProducts />} />
+              <Route path="EditProduct/:id" element={<EditProducts />} />
             </Route>
 
 
@@ -91,10 +105,17 @@ function App() {
               <Route  path='AddBrand' element={<AddBrand />}/>
               <Route  path="EditBrand/:id" element={<EditBrands />}/>
 
+            </Route>
+
+
+            <Route path="getCoupons"  >
+              <Route path="" element={<GetCoupons />} />
+
+            <Route path="AddCoupon" element={<Coupons />} />
+
 
             </Route>
 
-            <Route path="Coupons" element={<Coupons />} />
             <Route path="Orders" element={<Orders />} />
             <Route path="Settings" element={<Settings />} />
             <Route path="Users" element={<Users />} />

@@ -5,11 +5,64 @@ import Form from 'react-bootstrap/Form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faG } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
+import { useDispatch} from 'react-redux'
+import SignHook from '../../../Redux/Hooks/AuthHooks/SignHook';
+import { useNavigate } from "react-router-dom";
 
+
+const SignSchema = Yup.object().shape({
+  name:Yup.string(),
+  email:Yup.string()
+    .min(5, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Requireds , Fill in the data'),
+    password:Yup.number(),
+    passwordConfirm:Yup.number()
+    .min(8, 'Too Short')
+    .required('Requireds'),
+    phone:Yup.number()
+    .min(11,'Too Short must be 11 numbers!')
+    .required('Required'),
+});
 
 
 const Signup = () => {
+
+  const {signup}=SignHook()
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
+  const {
+    handleChange,
+    handleBlur,
+    handleReset,
+    handleSubmit,
+    errors,
+    touched,
+    values,
+  } = useFormik({
+    initialValues: {
+      name:'',
+      email:'',
+      password:'',
+      passwordConfirm:"",  
+      phone:"",
+    },
+    onSubmit:values=> {
+
+      signup(values)
+      console.log("hello")
+      handleReset()
+      navigate("/")
+
+    },
+    validationSchema : SignSchema
+  });
+
+
   return (
     <div className="Signup_Container">
 
@@ -20,35 +73,103 @@ const Signup = () => {
 
     <div className="input_container">
 
-    <Form className="Form">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="label">Email </Form.Label>
-        <Form.Control type="email" placeholder="Enter email address" />
-        <Form.Text className="text-muted">
-        </Form.Text>
+    <Form  onSubmit={handleSubmit} className="Form" >
+      
+
+      <Form.Group className="mb-3" >
+        <Form.Control  name="name"
+         value={values.name}
+          onChange={handleChange} 
+          onBlur={handleBlur} 
+           className='input'
+            type="name" placeholder="Enter Name" />
 
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="label">UserName</Form.Label>
-        <Form.Control type="email" placeholder="Enter UserName" />
-        <Form.Text className="text-muted">
-        </Form.Text>
+      {
+        touched.name && errors.name ?<p className='error'>{errors.name}</p>:null
+      }
+
+
+      <Form.Group className="mb-3" >
+        <Form.Control
+        name="email"
+         value={values.email}
+         onChange={handleChange}
+          onBlur={handleBlur} 
+         className='input'
+          type="email"
+           placeholder="Enter Email" />
 
       </Form.Group>
 
+      {
+        touched.email && errors.email ?<p className='error'>{errors.email}</p>:null
+      }
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Enter Password" />
+
+
+
+
+      <Form.Group className="mb-3">
+        <Form.Control 
+        name="password"
+        value={values.password}
+        onChange={handleChange}
+        onBlur={handleBlur} 
+        className='input'
+         type="password" 
+         placeholder="Enter Password" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+
+      {
+        touched.password && errors.password ?<p className='error'>{errors.password}</p>:null
+      }
+
+
+
+
+      <Form.Group className="mb-3" >
+        <Form.Control
+        name="passwordConfirm"
+        value={values.passwordConfirm}
+        onChange={handleChange}
+        onBlur={handleBlur} 
+         className='input'
+          type="password" 
+          placeholder="passwordConfirm" />
       </Form.Group>
+      {
+        touched.passwordConfirm && errors.passwordConfirm ?<p className='error'>{errors.passwordConfirm}</p>:null
+      }
+
+
+      
+
+
+      <Form.Group className="mb-1" >
+        <Form.Control
+        name="phone"
+        value={values.phone}
+        onChange={handleChange}
+        onBlur={handleBlur} 
+         className='input'
+          type="Phone number"
+           placeholder="Enter Phone Number" />
+      </Form.Group>
+      {
+        touched.phone && errors.phone ?<p className='error'>{errors.phone}</p>:null
+      }
+
+
+
+      <Button className="Button" type="Submit">Sign up</Button>
+
     </Form>
-    <Button className="Button" type="submit">Sign up</Button>
+
 
 
     <div className="media">
-      <p>Create Account with </p>
+      <p>Create Account with</p>
 
       <div className="images">
 

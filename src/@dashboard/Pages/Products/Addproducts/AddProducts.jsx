@@ -7,7 +7,6 @@ import AddProductHooks from '../../../../Redux/Hooks/ProductHooks/AddProductHook
 import Spinner from 'react-bootstrap/Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import empty from '../../../../assets/Images/empty.png';
 
 
 
@@ -29,6 +28,7 @@ const AddProducts = () => {
 
 
 const{uploadImage,uploadImageCover,img,setImg ,imageCover,setImageCover,
+  
   loading,saveproduct,ispress,categories,Subcategories}=AddProductHooks()
 
   const {

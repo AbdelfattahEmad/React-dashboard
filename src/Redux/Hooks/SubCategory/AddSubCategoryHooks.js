@@ -24,7 +24,6 @@ const categories = useSelector((state)=>state.CategoryReducer.category)
 
 //Button Submit
 const saveCategory = async (values)=>{
-
   setLoading(true)
   SetIspress(true)
    await dispatch(AddSubCategoryAction(values))
