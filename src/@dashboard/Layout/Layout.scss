@@ -46,6 +46,7 @@
             top: 0;
             width: calc(100% - 250px);
             inset-inline-start: 250px;
+            z-index: 100;
             @include responsiveView {
                 inset-inline-start: 0px;
                 width: 100%;

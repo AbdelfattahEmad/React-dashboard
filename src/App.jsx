@@ -36,6 +36,9 @@ import  { Toaster } from 'react-hot-toast';
 function App() {
 
   const dispatch = useDispatch()
+
+  dispatch(loadSignUserAction())
+
   
   const detectLangue = () => {
     const lang = localStorage.getItem('i18nextLng');
@@ -55,7 +58,6 @@ function App() {
   };
   useEffect(() => {
     detectLangue();
-    dispatch(loadSignUserAction())
   }, []);
 
   useEffect(()=>{

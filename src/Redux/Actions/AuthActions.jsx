@@ -1,4 +1,4 @@
-import { CREATE_NEW_USER , SIGN_IN ,GET_ERROR } from "../Types/Types";
+import { CREATE_NEW_USER , SIGN_IN ,GET_ERROR,LOG_OUT } from "../Types/Types";
 import { useInserstData} from "../Hooks/DataHooks/DataHooks";
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -55,6 +55,8 @@ import toast, { Toaster } from 'react-hot-toast';
         }
     }
 
+    
+
 
     
     export const loadSignUserAction =(data)=> async(dispatch) => {
@@ -70,6 +72,18 @@ import toast, { Toaster } from 'react-hot-toast';
           }
            
         }
+
+
+export const logout =()=> async(dispatch) => {
+           localStorage.removeItem("user")
+              dispatch({
+                  type: LOG_OUT,
+                  payload : null,
+                  loading : true,
+              })
+             
+}
+      
     
 
 

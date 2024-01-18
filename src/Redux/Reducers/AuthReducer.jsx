@@ -1,5 +1,5 @@
 
-import { CREATE_NEW_USER,SIGN_IN , GET_ERROR } from "../Types/Types"
+import { CREATE_NEW_USER,SIGN_IN , GET_ERROR, LOG_OUT } from "../Types/Types"
 
 
 const inital = {
@@ -19,7 +19,16 @@ const AuthReducer=(state= inital,action) =>{
                 ...state,
                 createUser:action.payload , 
                 loading :false,
+        }
+
+        case LOG_OUT:
+            return{
+                ...state,
+                signIn: action.payload , 
+                loading :false,
         } 
+
+
         case SIGN_IN:
             return {
                 ...state,
@@ -27,6 +36,7 @@ const AuthReducer=(state= inital,action) =>{
                 loading :false,
                 
         } 
+
         case GET_ERROR:
             return {
                 ...state,

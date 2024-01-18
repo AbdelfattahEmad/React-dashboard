@@ -6,7 +6,7 @@ import abdo from "../../../assets/Images/abdo.jpg";
 import eng from "../../../assets/Images/eng.png";
 import Search from "../search/search";
 import Dropdown from "react-bootstrap/Dropdown";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import { faYelp } from "@fortawesome/free-brands-svg-icons";
 import NotifictionTap from "../NotictionsTap/Notifiction";
 import i18n from "../../../i18n";
@@ -14,7 +14,12 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect} from 'react';
 import i18next from 'i18next';
 import {uiActions} from "../../../Redux/slices/ui-slice";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../../Redux/Actions/AuthActions";
+
+
 
 
 
@@ -29,11 +34,29 @@ const Topbar = () => {
 
   const {t} = useTranslation()
 
-  useEffect(() => {
-    i18next.on('languageChanged', (lng) => {
-      setLang(lng);
-    });
-  }, []);
+  const navigate = useNavigate()
+
+  const user = useSelector((state => state.AuthReducer.signIn))
+
+
+    const logOutSubmit=()=>{
+      localStorage.removeItem("user")
+      dispatch(logout())
+    }
+
+    useEffect(()=>{
+      console.log(user)
+      if(!user){
+        console.log("dsd")
+        navigate("/signin")
+      }
+    },[navigate,user])
+
+    useEffect(() => {
+      i18next.on('languageChanged', (lng) => {
+        setLang(lng);
+      });
+    }, []);
 
       {/* end Translation */}
 
@@ -155,13 +178,15 @@ const Topbar = () => {
 
 
         {/* start Profile personly */}
+
+        
         <Dropdown>
           <Dropdown.Toggle className="Profil_Btns">
             <div className="name">
                 <img src={abdo} alt="aboda" />
                 <div className="data">
-                  <h5>{t("abdelfatah")}</h5>
-                  <p>{t("programmer")}</p>
+                  <h5>{user?.data?.name}</h5>
+                  <p>{user?.data?.role}</p>
                 </div>
               </div>
 
@@ -199,12 +224,13 @@ const Topbar = () => {
             </Dropdown.Item>
             
           
-            <Dropdown.Item href="#/action-1" className="menu_item">
+            <Dropdown.Item   onClick={logOutSubmit} className="menu_item">
               <FontAwesomeIcon
                 icon={faRightFromBracket}
-                style={{ color: '#4e5156', marginRight: 5 }}
+                style={{ color: '#4e5156', marginRight: 5 , cursor:"pointer" }}
               />
-              <Link className="Link">{t("Log out")}</Link>
+             {t("Log out")}
+
             </Dropdown.Item>
 
           </Dropdown.Menu>
