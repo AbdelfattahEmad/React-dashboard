@@ -112,9 +112,7 @@ function App() {
 
             <Route path="getCoupons"  >
               <Route path="" element={<GetCoupons />} />
-
             <Route path="AddCoupon" element={<Coupons />} />
-
 
             </Route>
 

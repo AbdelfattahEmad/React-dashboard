@@ -28,7 +28,7 @@ const SubCategory = () => {
     <div className="Sub_Container">
 
 
-    <Modal show={show} onHide={handleClose} >
+            <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>
           <Modal.Title>Delete operation!</Modal.Title>
         </Modal.Header>
@@ -41,7 +41,7 @@ const SubCategory = () => {
            Confirm 
           </Button>
         </Modal.Footer>
-          </Modal>
+            </Modal>
 
 
 

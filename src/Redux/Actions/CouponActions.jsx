@@ -1,6 +1,7 @@
 import {GET_ALL_COUPONS , GET_ERROR ,ADD_COUPONS ,DELETE_COUPON ,EDIT_COUPON , GET_ONE_COUPON  } from "../Types/Types"
 import baseUrl, { loggedInstance } from "../Api/basUrl"
-import {  useInserstDataWithAuth} from "../Hooks/DataHooks/DataHooks";
+import { useInserstDataWithAuth} from "../Hooks/DataHooks/DataHooks";
+
 
 
 
@@ -45,13 +46,13 @@ export const getAllCouponsAction =()=>  async(dispatch) => {
 
 
 
-export const DeleteCouponAction =(id)=>  async(dispatch) => {
+export const DeleteCouponAction =(id)=> async(dispatch) => {
     try {
-       const response = await DeleteData(`coupons/${id}`);
+       const response = await loggedInstance.delete(`coupons/${id}`);
 
        dispatch({
             type : DELETE_COUPON ,
-            payload : response.data,
+            payload :response,
             loading : true,
             error: false
         })
@@ -82,8 +83,6 @@ export const getOneCouponAction =(id)=>  async(dispatch) => {
         })
     }
 }
-
-
 
 
 export const EditCouponAction =(Item)=> async(dispatch) => {

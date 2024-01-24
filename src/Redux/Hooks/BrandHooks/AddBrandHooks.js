@@ -91,7 +91,7 @@ useEffect(()=>{
 
 },[loading])
 
-return {img,name ,loading ,onImageChange ,OnChangeName ,HandelSubmit ,ispress  }
+return {img,name ,loading ,onImageChange ,OnChangeName ,HandelSubmit ,ispress}
 
 }
 

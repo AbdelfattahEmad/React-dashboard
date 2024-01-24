@@ -1,7 +1,8 @@
-.Container_review{
+.Review_container{
     height: 100vh;
     margin-inline-start:1px;
     padding-inline-start:1px;
+    padding: 30px;
 
 h2{
     padding: 10px;
@@ -16,41 +17,55 @@ h2{
 
     
 }
-button{
-    display: block;
-    margin-top: 10px;
-    padding: 4px 14px;
-    border-radius: 10px;
-    border: 1px solid #fff5;
-    background-color: #fff5;
-    margin-inline-start: 10px;
+.Button{
+    margin: 20px;
+    background-color: #0ab39c;
+    color: #ffffff;
+    border: 1px solid #0ab39c;
+    padding: 10px 35px;
+    
     &:hover{
-        background-color: #eee;
-        color: black;
-    }
+        background-color: #ffffff;
+        color: #0ab39c;}
+        border: 1px solid #0ab39c;
 
-}
-.person_info{
-    background-color: #fff5;
-    margin-top: 10px;
-    padding: 15px 20px;
-    img{
-        width: 50px;
-        border-radius: 50px;
-        margin-inline-end: 8px;
-    }
-    h5{
-        margin-top: 5px;
-        color: black;
-        font-weight: bold ;
-        font-size: 20px;
-    }
-    p{
-        padding: 4px;
-        font-size: 17px;
 
-    }
 }
 
 
+
+
+
+
+}
+.Card_Rreview{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(56,65,74,.15);
+
+
+
+
+    .Btn_Review{
+        Button{
+            display: block;
+            margin: 5px;
+            background-color: #0ab39c;
+            color: #ffffff;
+            border-color: #0ab39c;
+            &:hover{
+                background-color: #ffffff;
+                color: #0ab39c;
+                
+
+
+            }
+        
+        }
+    }
+    
 }

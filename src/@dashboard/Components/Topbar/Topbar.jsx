@@ -47,7 +47,7 @@ const Topbar = () => {
     useEffect(()=>{
       console.log(user)
       if(!user){
-        console.log("dsd")
+        
         navigate("/signin")
       }
     },[navigate,user])

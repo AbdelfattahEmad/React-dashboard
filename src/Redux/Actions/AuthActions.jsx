@@ -41,8 +41,6 @@ import toast, { Toaster } from 'react-hot-toast';
            }else{
 
             toast.error('you are not authorized to login !');
-
-
            }
 
         } catch(err) {
@@ -72,6 +70,8 @@ import toast, { Toaster } from 'react-hot-toast';
           }
            
         }
+
+
 
 
 export const logout =()=> async(dispatch) => {

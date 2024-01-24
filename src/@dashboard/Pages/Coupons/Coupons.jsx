@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { CreateCouponAction } from "../../../Redux/Actions/CouponActions";
 import { useDispatch } from 'react-redux'
+import toast  from 'react-hot-toast';
+
 
 
 
@@ -46,6 +48,9 @@ const Addcoupons = () => {
     onSubmit:couponValues=> {
       dispatch(CreateCouponAction(couponValues))
       handleReset()
+      toast.success(' Added successfully');
+
+
     },
     validationSchema : SignSchema
   });

@@ -39,12 +39,7 @@ const GetCoupons = () => {
                 </Button>
               </Modal.Footer>
               </Modal>
-      
-      
-      
             <div className='Coupon_Container'>
-
-
               <div className='Tabel_Header'>
       
                 <div className='Title'>
@@ -78,7 +73,6 @@ const GetCoupons = () => {
                       <td>{item.expire}</td>
                       <td>{item.discount}</td>
                       <td>
-                    <Link className="Table_Btn" to={`EditProduct/${item._id}`}>Edit</Link>
                         <button className="Table_Btn" onClick={function(){handleShow();setId(item._id)}} >Delete</button>
                       </td>
                   </Tabel.tabelRow>
@@ -96,7 +90,6 @@ const GetCoupons = () => {
                 </div>
 
               </div>
-              
             </div>
       
             </>

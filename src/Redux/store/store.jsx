@@ -6,6 +6,7 @@ import BrandReducer from "../Reducers/BrandReducer";
 import ProductReducer from "../Reducers/ProductReducer";
 import AuthReducer from "../Reducers/AuthReducer";
 import CouponReducer from "../Reducers/CouponReducer";
+import ReviewReducer from "../Reducers/ReviewReducer";
 
 
 
@@ -18,7 +19,9 @@ const store = configureStore({
         BrandReducer:BrandReducer,
         ProductReducer:ProductReducer,
         AuthReducer:AuthReducer,
-        CouponReducer:CouponReducer
+        CouponReducer:CouponReducer,
+        ReviewReducer:ReviewReducer 
+
         
     }
 })

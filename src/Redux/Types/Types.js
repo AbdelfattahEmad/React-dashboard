@@ -61,9 +61,24 @@
 
   export const DELETE_COUPON  = "DELETE_COUPON" 
   
-  export const EDIT_COUPON  = "EDIT_COUPON" 
+  export const EDIT_COUPON = "EDIT_COUPON" 
 
-  export const GET_ONE_COUPON  = "GET_ONE_COUPON" 
+  export const GET_ONE_COUPON ="GET_ONE_COUPON" 
+
+  //REVIEW
+  
+  export const ADD_REVIEW ="ADD_REVIEW" 
+  export const GET_ALL_REVIEW ="GET_ALL_REVIEW" 
+  export const DELETE_REVIEW  = "DELETE_REVIEW" 
+  export const EDIT_REVIEW = "EDIT_REVIEW" 
+  export const GET_ONE_REVIEW  ="GET_ONE_REVIEW" 
+
+
+
+  
+
+
+  
 
 
   

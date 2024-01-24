@@ -1,53 +1,51 @@
-import {GET_ALL_COUPONS , GET_ERROR ,ADD_COUPONS ,DELETE_COUPON ,EDIT_COUPON , GET_ONE_COUPON  } from "../Types/Types"
+import {ADD_REVIEW ,GET_ERROR , GET_ALL_REVIEW ,DELETE_REVIEW ,EDIT_REVIEW , GET_ONE_REVIEW } from "../Types/Types"
 
 
 
 const inital = {
     
-    AddCoupons:[],
-    Coupons:[],
-    DeleteCoupon:[],
-    getOneCoupon:[],
-    EditCoupon:[],
+    AddReview:[],
+    getAllReview:[],
+    EditReview:[],
+    DeleteReview:[],
     loading :[]
 
 }
 
-    const CouponReducer = ( state= inital , action) =>{
+    const ReviewReducer = ( state= inital , action) =>{
     switch(action.type){
         
-        case ADD_COUPONS:
+        case ADD_REVIEW :
             return {
                 ...state,
-                AddCoupons:action.payload , 
+                AddReview:action.payload , 
+                loading :false,
+        } 
+        case GET_ALL_REVIEW:
+            return {
+                ...state,
+                getAllReview:action.payload , 
                 loading :false,
                 error:action.error
         } 
-        case GET_ALL_COUPONS:
-            return {
-                ...state,
-                Coupons:action.payload , 
-                loading :false,
-                error:action.error
-        } 
-            case DELETE_COUPON :
+            case DELETE_REVIEW  :
                 return {
                     ...state,
-                    DeleteCoupon:action.payload, 
+                    DeleteReview:action.payload, 
                     loading :false,
                     error:action.error
                         }
-            case GET_ONE_COUPON   :
+            case GET_ONE_REVIEW    :
                 return {
                 ...state,
                  getOneCoupon:action.payload , 
                 loading :false,
                 error:action.error
                         }
-            case EDIT_COUPON :
+            case EDIT_REVIEW  :
                 return {
                 ...state,
-                EditCoupon:action.payload , 
+                EditReview:action.payload , 
                 loading :false,
                 error:action.error
                         }
@@ -65,4 +63,4 @@ const inital = {
     }
 }
 
-export default CouponReducer
+export default ReviewReducer
